@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "npm --prefix BackendNodeJS run start",
+    "dev": "npm --prefix BackendNodeJS run dev"
+  },
+  "dependencies": {
+    "mongoose": "^9.7.3"
+  }
+}
