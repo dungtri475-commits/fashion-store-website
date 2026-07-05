@@ -6,6 +6,10 @@ import env from "./env.js";
 mongoose.set("strictQuery", true);
 
 export async function connectDatabase() {
+    if (mongoose.connection.readyState === 1) {
+        return mongoose.connection;
+    }
+
     try {
         const connection = await mongoose.connect(env.MONGODB_URI, {
             autoIndex: true,
@@ -19,6 +23,8 @@ export async function connectDatabase() {
         console.log("Database:", connection.connection.name);
         console.log("Host:", connection.connection.host);
         console.log("Port:", connection.connection.port);
+
+        return connection;
     } catch (error) {
         console.error("MongoDB Connection Error");
         console.error(error.message);

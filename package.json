@@ -5,6 +5,7 @@
     "dev": "npm --prefix BackendNodeJS run dev"
   },
   "dependencies": {
+    "lucide": "^1.23.0",
     "mongoose": "^9.7.3"
   }
 }

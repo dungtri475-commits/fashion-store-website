@@ -10,4 +10,21 @@ const envPath = path.resolve(__dirname, "../../.env");
 
 dotenv.config({ path: envPath });
 
-export default process.env;
+function getRequiredEnv(name) {
+    const value = process.env[name];
+
+    if (!value) {
+        throw new Error(`Missing required environment variable: ${name}`);
+    }
+
+    return value;
+}
+
+const env = {
+    NODE_ENV: process.env.NODE_ENV || "development",
+    PORT: Number(process.env.PORT) || 3000,
+    MONGODB_URI: getRequiredEnv("MONGODB_URI"),
+    CORS_ORIGIN: process.env.CORS_ORIGIN || "http://localhost:5500"
+};
+
+export default env;
