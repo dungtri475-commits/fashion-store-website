@@ -1,12 +1,6 @@
-import express from "express";
-import corsMiddleware from "./config/cors.js";
+import app from "./app.js";
 import env from "./config/env.js";
 import { connectDatabase } from "./config/db.js";
-
-const app = express();
-
-app.use(express.json());
-app.use(corsMiddleware);
 
 async function startServer() {
     await connectDatabase();
