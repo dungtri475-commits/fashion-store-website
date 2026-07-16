@@ -9,22 +9,16 @@
      <script src="https://cdn.tailwindcss.com"></script>
 
      <!--Global CSS-->
-     <link rel="stylesheet" href="./styles/global.css">
+     <link rel="stylesheet" href="./styles/main.css">
 </head>
-<body class="bg-white">
+<body>
+    <div class="site-shell layout--narrow"> <!-- site-shell: la layout goc-->
+        <div id="navbar"></div>
+        <main id="app" class="site-content"></main>
+        <div id="footer"></div>
+    </div>
 
-    <!--Navbar-->
-    <header id="navbar"></header>
-
-    <!--Main Content-->
-    <main id="app" class="min-h-screen"></main>
-
-    <!--Footer-->
-    <footer id="footer"></footer>
-
-    <!--MainJS-->
     <script type="module" src="./app.js"></script>
-    
 </body>
 
 </html>
