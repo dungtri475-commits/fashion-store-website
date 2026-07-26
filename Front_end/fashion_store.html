@@ -5,80 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion Store</title>
 
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+
     <!-- TailWind CSS-->
      <script src="https://cdn.tailwindcss.com"></script>
 
      <!--Global CSS-->
-     <link rel="stylesheet" href="./styles/global.css">
+     <link rel="stylesheet" href="./styles/main.css">
 </head>
-<body class="bg-white">
+<body>
+    <div class="site-shell layout--narrow"> <!-- site-shell: la layout goc-->
+        <div id="navbar"></div>
+        <main id="app" class="site-content"></main>
+        <div id="footer"></div>
+    </div>
 
-<<<<<<< Updated upstream
-    <!--Navbar-->
-    <header id="navbar"></header>
-
-    <!--Main Content-->
-    <main id="app" class="min-h-screen"></main>
-
-    <!--Footer-->
-    <footer id="footer"></footer>
-
-    <!--MainJS-->
     <script type="module" src="./app.js"></script>
-    
-=======
-<<<<<<< Updated upstream
-    <script type="module" src="./app.js"></script>
-=======
-    <!--Navbar-->
-    <header id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50 flex justify-between items-center px-10 py-4">
-        <div class ="text-2xl font-bold tracking-wider text-black">Fashion store</div>
-        <ul class="flex space-x-8 text-sm font-semibold uppercase text-gray-700">
-            <li><a href="#" class="hover:text-black transition">Trang chủ</a></li>
-            <li><a href="#" class="hover:text-black transition">Sản phẩm</a></li>
-            <li><a href="#" class="hover:text-black transition">Bộ sưu tập</a></li>
-            <li><a href="#" class="hover:text-black transition">Liên hệ</a></li>
-        </ul>
-        <div class="flex space-x-6 text-sm font-medium">
-            <a href="#" class="hover:text-gray-500 flex items-center gap-2">
-            <i data-lucide="search" class="w-4 h-4"></i> Tìm kiếm
-            </a>
-            <a href="#" class="hover:text-gray-500 flex items-center gap-2">
-            <i data-lucide="shopping-cart" class="w-4 h-4"></i> Giỏ hàng
-            </a>
-        </div>
-    </header>
-
-    <!--Main Content-->
-    <main id="app" class="min-h-screen pt-16">
-    <!-- HERO BANNER -->
-    <section class="relative h-[70vh] bg-gray-900 flex items-center justify-center text-center text-white overflow-hidden">
-        <!-- Ảnh nền phía sau -->
-        <img src="./assets/images/homePage/heros/hero-banner.png" alt="Hero Banner" class="absolute inset-0 w-full h-full object-cover opacity-50">
-        
-        <!-- Nội dung chữ và nút bấm -->
-        <div class="relative z-10 px-4">
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-wide mb-4">BỘ SƯU TẬP MÙA HÈ 2026</h1>
-            <p class="text-base md:text-lg text-gray-200 max-w-xl mx-auto mb-6">Khám phá những phong cách thiết kế hiện đại, năng động và dẫn đầu xu hướng thời trang mới nhất.</p>
-            <a href="#" class="inline-flex items-center gap-2 bg-white text-black font-bold uppercase tracking-wider px-8 py-3 hover:bg-black hover:text-white transition duration-300">
-            Mua Ngay <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-        </div>
-    </section>
-</main>
-
-    <!--Footer-->
-    <footer id="footer"></footer>
-
-    <!--MainJS-->
-    <script type="module" src="./app.js"></script>
-  <!-- Thêm đoạn này để kích hoạt hiển thị icon Lucide -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        lucide.createIcons();
-    </script>  
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 </body>
 
 </html>
