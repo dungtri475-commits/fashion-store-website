@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;500&display=swap");
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    min-height: 108px;
+    padding: 12px 16px;
+}
+
+.header_left{
+    justify-self: start;
+}
+
+.header_center{
+    justify-self: center;
+}
+
+.header_right{
+    display: flex;
+    gap: 18px;
+    justify-self: end;
+}
+
+.header_logo{
+    position: relative;
+    display: inline-block;
+    max-width: 170px;
+    margin: 0;
+    font-family: "Bodoni Moda", "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -0.08em;
+    line-height: 0.72;
+    text-align: center;
+    text-wrap: balance;
+    color: #2a2a2a;
+}
+
+.header_logo::after{
+    content: "*";
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    font-size: 11px;
+    line-height: 1;
+}
+
+.header_icon-btn{
+    width: 24px;
+    height: 24px;
+}

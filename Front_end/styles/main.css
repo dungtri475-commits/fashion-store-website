@@ -1,0 +1,32 @@
+/* Component */
+@import url("../components/common/common.css"); 
+/* Layout */
+@import url("../components/layout/header/header.css");
+@import url("../components/layout/footer/footer.css");
+
+body {
+    margin: 0;
+    background: #d9d9d9;
+}
+
+.site-shell {
+    min-height: 100vh;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.layout--narrow {
+    max-width: 520px;
+}
+
+.layout--wide {
+    max-width: 960px;
+}
+
+.layout--full {
+    max-width: 100%;
+}
+
+.site-content {
+    min-height: 60vh;
+}
