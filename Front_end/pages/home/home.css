@@ -1,0 +1,45 @@
+/* Custom Typography */
+body {
+  font-family: 'Tenor Sans', sans-serif;
+  color: #333333;
+}
+
+.font-serif-title {
+  font-family: 'Bodoni Moda', serif;
+}
+
+/* Duong phan cach hinh thoi trang tri */
+.divider-diamond {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.divider-diamond::before,
+.divider-diamond::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #E0E0E0;
+  max-width: 80px;
+}
+
+.divider-diamond span {
+  width: 6px;
+  height: 6px;
+  border: 1px solid #888888;
+  transform: rotate(45deg);
+  margin: 0 10px;
+  background-color: transparent;
+}
+
+/* An thanh cuon cho danh sach san pham ngang */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

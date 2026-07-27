@@ -4,67 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Open Fashion - Home</title>
-  <!-- Nhúng Tailwind CSS -->
+  
+  <!-- CSS Library & Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Bodoni Moda / Tenor Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../../components/common/common.css">
-    <link rel="stylesheet" href="../../components/layout/header/header.css">
-    <link rel="stylesheet" href="../../components/layout/footer/footer.css">
-
-  <style>
-    body {
-      font-family: 'Tenor Sans', sans-serif;
-      color: #333333;
-    }
-    .font-serif-title {
-      font-family: 'Bodoni Moda', serif;
-    }
-    .divider-diamond {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 1.5rem 0;
-    }
-    .divider-diamond::before,
-    .divider-diamond::after {
-      content: "";
-      flex: 1;
-      border-bottom: 1px solid #E0E0E0;
-      max-width: 80px;
-    }
-    .divider-diamond span {
-      width: 6px;
-      height: 6px;
-      border: 1px solid #888888;
-      transform: rotate(45deg);
-      margin: 0 10px;
-      background-color: transparent;
-    }
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
-
+  <!-- Component Styles -->
+  <link rel="stylesheet" href="../../components/common/common.css">
+  <link rel="stylesheet" href="../../components/layout/header/header.css">
+  <link rel="stylesheet" href="../../components/layout/footer/footer.css">
+  <link rel="stylesheet" href="./home.css">
 </head>
 <body class="bg-white flex flex-col items-center">
 
-  <!-- Khung bao Mobile Viewport -->
+  <!-- Main Container (Mobile View) -->
   <div class="w-full max-w-[375px] bg-white shadow-2xl min-h-screen relative overflow-hidden pb-10">
 
-   <div id="header"></div>
+    <!-- Header Component -->
+    <div id="header"></div>
 
-    <!-- 2. HERO BANNER -->
+    <!-- Hero Banner Section -->
     <section class="relative w-full aspect-[3/5] bg-gray-100 flex items-center justify-center text-center overflow-hidden">
-      <!-- Sửa đường dẫn lùi 2 cấp thư mục: ../../assets/ -->
       <img src="../../assets/images/homePage/heros/hero-banner.png" alt="Hero Banner" class="absolute inset-0 w-full h-full object-cover object-top">
       <div class="absolute inset-0 bg-black/10"></div>
 
@@ -79,6 +41,7 @@
           EXPLORE COLLECTION
         </a>
 
+        <!-- Slider Pagination Dots -->
         <div class="flex space-x-1.5 mt-6 items-center">
           <span class="w-1.5 h-1.5 bg-white rotate-45 transform"></span>
           <span class="w-1.5 h-1.5 border border-white/70 rotate-45 transform"></span>
@@ -87,13 +50,13 @@
       </div>
     </section>
 
-    <!-- 3. NEW ARRIVAL SECTION -->
+    <!-- New Arrivals Section -->
     <section class="px-4 py-8 text-center">
       <h2 class="text-base tracking-[4px] uppercase font-serif-title text-black">NEW ARRIVAL</h2>
       
       <div class="divider-diamond"><span></span></div>
 
-      <!-- Danh mục Tabs -->
+      <!-- Category Filter Tabs -->
       <div class="flex justify-center space-x-4 text-xs text-gray-400 mb-6">
         <div class="flex flex-col items-center">
           <span class="text-black font-medium cursor-pointer">All</span>
@@ -105,7 +68,7 @@
         <span class="cursor-pointer hover:text-black">Bag</span>
       </div>
 
-      <!-- Grid 4 Sản Phẩm -->
+      <!-- Product Grid -->
       <div class="grid grid-cols-2 gap-x-3 gap-y-6 text-left">
         <div>
           <div class="aspect-[3/4] bg-gray-100 overflow-hidden mb-2">
@@ -140,7 +103,6 @@
         </div>
       </div>
 
-      <!-- Explore More Button -->
       <a href="#" class="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-black mt-8">
         <span>Explore More</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path></svg>
@@ -148,7 +110,7 @@
 
       <div class="divider-diamond mt-8"><span></span></div>
 
-      <!-- Brand Logos -->
+      <!-- Partner Brands -->
       <div class="my-6">
         <img src="../../assets/images/homePage/brands/all-brands.png" alt="Brand Logos" class="w-full h-auto object-contain opacity-80">
       </div>
@@ -156,7 +118,7 @@
       <div class="divider-diamond"><span></span></div>
     </section>
 
-    <!-- 4. COLLECTIONS SECTION -->
+    <!-- Collections Section -->
     <section class="text-center py-4">
       <h2 class="text-base tracking-[4px] uppercase font-serif-title text-black mb-6">COLLECTIONS</h2>
 
@@ -181,7 +143,7 @@
         </div>
       </div>
 
-      <!-- Video Banner Overlay -->
+      <!-- Video Banner -->
       <div class="relative w-full aspect-[16/9] bg-gray-300 overflow-hidden flex items-center justify-center">
         <img src="../../assets/images/homePage/videos/Video.png" alt="Video Preview" class="w-full h-full object-cover">
         <button class="w-10 h-10 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center text-white absolute">
@@ -190,12 +152,12 @@
       </div>
     </section>
 
-    <!-- 5. JUST FOR YOU & HASHTAGS -->
+    <!-- Just For You / Recommendations Section -->
     <section class="py-8 text-center">
       <h2 class="text-base tracking-[4px] uppercase font-serif-title text-black">JUST FOR YOU</h2>
       <div class="divider-diamond"><span></span></div>
 
-      <!-- Cuộn ngang sản phẩm -->
+      <!-- Horizontal Scrollable Product List -->
       <div class="flex overflow-x-auto space-x-4 px-4 pb-4 no-scrollbar scroll-smooth">
         <div class="flex-none w-[200px] text-left">
           <div class="aspect-[3/4] bg-gray-100 mb-2">
@@ -214,7 +176,6 @@
         </div>
       </div>
 
-      <!-- Họa tiết chấm slider -->
       <div class="flex justify-center space-x-1.5 my-4">
         <span class="w-1.5 h-1.5 bg-gray-500 rotate-45 transform"></span>
         <span class="w-1.5 h-1.5 border border-gray-400 rotate-45 transform"></span>
@@ -236,7 +197,7 @@
       </div>
     </section>
 
-    <!-- 6. VALUE PROPOSITION -->
+    <!-- About & Features Section -->
     <section class="bg-gray-50/50 px-6 py-10 text-center">
       <div class="text-center flex flex-col items-center mb-3">
         <span class="text-xl font-serif-title tracking-[3px] uppercase text-black leading-none">Open</span>
@@ -249,7 +210,7 @@
 
       <div class="divider-diamond"><span></span></div>
 
-      <!-- 4 Icon Tiện ích -->
+      <!-- Feature Grid -->
       <div class="grid grid-cols-2 gap-6 text-center mt-6">
         <div class="flex flex-col items-center">
           <svg class="w-8 h-8 text-gray-700 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
@@ -274,12 +235,12 @@
       </div>
     </section>
 
-    <!-- 7. FOLLOW US (INSTAGRAM) -->
+    <!-- Social / Follow Us Section -->
     <section class="py-8 text-center">
       <h2 class="text-base tracking-[4px] uppercase font-serif-title text-black">FOLLOW US</h2>
       <svg class="w-5 h-5 mx-auto text-gray-700 mt-2 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
 
-      <!-- 4 Ảnh Instagram -->
+      <!-- Instagram Feed Grid -->
       <div class="grid grid-cols-2 gap-3 px-4">
         <div class="relative aspect-square bg-gray-100 overflow-hidden">
           <img src="../../assets/images/homePage/followUs/instagram1.png" alt="Insta 1" class="w-full h-full object-cover">
@@ -300,27 +261,12 @@
       </div>
     </section>
 
-   <div id="footer"></div>
+    <!-- Footer Component -->
+    <div id="footer"></div>
 
   </div>
 
-<script type="module">
-  import { Header } from "../../components/layout/header/header.js";
-  import { Footer } from "../../components/layout/footer/footer.js";
-
-  // 1. Render HTML cho Header và Footer
-  const headerContainer = document.getElementById("header");
-  const footerContainer = document.getElementById("footer");
-
-  if (headerContainer) headerContainer.innerHTML = Header();
-  if (footerContainer) footerContainer.innerHTML = Footer();
-
-  // 2. Tự động sửa lại đường dẫn ./assets/ thành ../../assets/ cho tất cả icon vừa render
-  document.querySelectorAll('img[src^="./assets/"]').forEach(img => {
-    const currentSrc = img.getAttribute('src');
-    img.setAttribute('src', currentSrc.replace('./assets/', '../../assets/'));
-  });
-</script>
+  <script type="module" src="./home.js"></script>
 
 </body>
 </html>

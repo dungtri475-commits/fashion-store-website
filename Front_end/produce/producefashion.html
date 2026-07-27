@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail - Fashion</title>
+  <link rel="stylesheet" href="fashion.css">
+</head>
+<body>
+
+  <div class="fashion-detail-container">
+    <!-- Gallery Ảnh Thời Trang -->
+    <div class="fashion-gallery">
+      <div class="main-img-box">
+        <img id="main-fashion-img" src="https://picsum.photos/500/650?random=1" alt="Fashion Item">
+      </div>
+      <div class="thumb-list">
+        <img src="https://picsum.photos/500/650?random=1" class="thumb active" onclick="changeFashionImg(this)">
+        <img src="https://picsum.photos/500/650?random=2" class="thumb" onclick="changeFashionImg(this)">
+        <img src="https://picsum.photos/500/650?random=3" class="thumb" onclick="changeFashionImg(this)">
+      </div>
+    </div>
+
+    <!-- Thông Tin Chi Tiết Thời Trang -->
+    <div class="fashion-info">
+      <span class="brand">Oversized Winter Collection</span>
+      <h1 class="title">Áo Khoác Blazer Form Rộng Nam/Nữ</h1>
+      <div class="price-row">
+        <span class="price">890.000₫</span>
+        <span class="old-price">1.150.000₫</span>
+      </div>
+
+      <!-- Biến thể màu sắc -->
+      <div class="option-group">
+        <label>Màu sắc:</label>
+        <div class="color-options">
+          <button class="color-btn active" style="background: #1e1e1e;"></button>
+          <button class="color-btn" style="background: #c2b280;"></button>
+          <button class="color-btn" style="background: #4a5d4e;"></button>
+        </div>
+      </div>
+
+      <!-- Biến thể kích thước -->
+      <div class="option-group">
+        <label>Size:</label>
+        <div class="size-options">
+          <button class="size-btn">S</button>
+          <button class="size-btn active">M</button>
+          <button class="size-btn">L</button>
+          <button class="size-btn">XL</button>
+        </div>
+      </div>
+
+      <button class="btn-submit">Thêm Vào Giỏ Hàng</button>
+    </div>
+  </div>
+
+  <script>
+    function changeFashionImg(el) {
+      document.getElementById('main-fashion-img').src = el.src;
+      document.querySelectorAll('.fashion-gallery .thumb').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+</body>
+</html>
