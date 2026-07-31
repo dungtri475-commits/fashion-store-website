@@ -3,6 +3,9 @@
 /* Layout */
 @import url("../components/layout/header/header.css");
 @import url("../components/layout/footer/footer.css");
+/* Pages */
+@import url("../pages/home/home.css");
+@import url("../pages/blog/blog.css");
 
 body {
     margin: 0;
