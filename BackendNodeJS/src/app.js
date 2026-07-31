@@ -1,7 +1,14 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
 import express from "express";
 import corsMiddleware from "./config/cors.js";
 
 import routes from "./routes/index.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const uploadsDirectory = path.resolve(__dirname, "../uploads");
 
 const app = express();
 
@@ -9,6 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(corsMiddleware);
+app.use("/uploads", express.static(uploadsDirectory));
 
 // Routes
 app.use("/api", routes);
