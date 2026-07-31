@@ -1,36 +1,17 @@
-export function HomePage() {
-    return `
-        <section class="home-page">
-            <div class="home-hero">
-                <p class="home-eyebrow">Open Fashion</p>
-                <h1>Editorial stories for the modern wardrobe.</h1>
-                <p class="home-copy">
-                    Explore the latest journal entries, styling notes, and campaign stories
-                    loaded directly from the blog backend.
-                </p>
-                <div class="home-actions">
-                    <a class="home-button" href="#/blog">Open Blog Journal</a>
-                    <a class="home-link" href="#/blog/latest">See Latest Posts</a>
-                </div>
-            </div>
+import { Header } from "../../components/layout/header/header.js";
+import { Footer } from "../../components/layout/footer/footer.js";
 
-            <section class="home-preview">
-                <div class="home-preview__card">
-                    <span>Live backend integration</span>
-                    <strong>Blog list</strong>
-                    <p>Reads real data from <code>/api/blogs</code> with paging and filtering support.</p>
-                </div>
-                <div class="home-preview__card">
-                    <span>Editorial detail</span>
-                    <strong>Blog detail</strong>
-                    <p>Loads real article content from <code>/api/blogs/:slug</code>.</p>
-                </div>
-                <div class="home-preview__card">
-                    <span>More modules ready</span>
-                    <strong>Popular and related</strong>
-                    <p>Frontend can now consume the latest, popular, and related blog endpoints.</p>
-                </div>
-            </section>
-        </section>
-    `;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  // Render Header va Footer chung
+  const headerContainer = document.getElementById("header");
+  const footerContainer = document.getElementById("footer");
+
+  if (headerContainer) headerContainer.innerHTML = Header();
+  if (footerContainer) footerContainer.innerHTML = Footer();
+
+  // Xu ly lai duong dan anh neu can
+  document.querySelectorAll('img[src^="./assets/"]').forEach(img => {
+    const currentSrc = img.getAttribute('src');
+    img.setAttribute('src', currentSrc.replace('./assets/', '../../assets/'));
+  });
+});
