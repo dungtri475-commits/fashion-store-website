@@ -25,9 +25,9 @@ export function Footer() {
             </div>
             ${divider()}
             <nav class = "footer_nav">
-               ${link("About","/about")}
-               ${link("Contact","/contact")}
-               ${link("Blog","/blog")}
+               ${link("About","#/home")}
+               ${link("Contact","#/home")}
+               ${link("Blog","#/blog")}
             </nav>
             
         </footer>
