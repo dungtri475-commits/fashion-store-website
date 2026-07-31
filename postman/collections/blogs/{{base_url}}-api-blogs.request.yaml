@@ -1,0 +1,6 @@
+$kind: http-request
+name: "{{base_url}}/api/blogs"
+description: ""
+url: "{{base_url}}/api/blogs"
+method: GET
+order: 1785411396094
