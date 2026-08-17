@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu UI</title>
+
+    <link rel="stylesheet" href="menu.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<aside class="menu">
+
+    <!-- Close -->
+    <div class="menu_header">
+        <button class="menu_close-btn">
+            <img src="../../assets/icons/Close.svg" alt="Close">
+        </button>
+    </div>
+
+
+    <!-- Tabs -->
+    <div class="menu_tabs">
+
+        <button class="menu_tab active">
+            WOMEN
+        </button>
+
+        <button class="menu_tab">
+            MAN
+        </button>
+
+        <button class="menu_tab">
+            KIDS
+        </button>
+
+    </div>
+
+
+    <div class="menu_divider"></div>
+
+
+    <!-- List -->
+    <ul class="menu_list">
+
+        <li>
+            <span>New</span>
+            <img src="../../assets/icons/Forward.svg" alt="Arrow">
+        </li>
+
+        <!-- Mục Apparel mở rộng (Expand) có gắn ID để xử lý JS -->
+        <li class="menu-item-dropdown active" id="apparel-toggle">
+            <div>
+                <span>Apparel</span>
+                <img src="../../assets/icons/Forward.svg" alt="Arrow" class="arrow-icon">
+            </div>
+            
+            <ul class="submenu">
+                <li>Outer</li>
+                <li>Dress</li>
+                <li>Blouse/Shirt</li>
+                <li>T-Shirt</li>
+                <li>Knitwear</li>
+                <li>Skirt</li>
+                <li>Pants</li>
+                <li>Denim</li>
+                <li>Kids</li>
+            </ul>
+        </li>
+
+        <li>
+            <span>Bag</span>
+            <img src="../../assets/icons/Forward.svg" alt="Arrow">
+        </li>
+
+        <li>
+            <span>Shoes</span>
+            <img src="../../assets/icons/Forward.svg" alt="Arrow">
+        </li>
+
+        <li>
+            <span>Beauty</span>
+            <img src="../../assets/icons/Forward.svg" alt="Arrow">
+        </li>
+
+        <li>
+            <span>Accessories</span>
+            <img src="../../assets/icons/Forward.svg" alt="Arrow">
+        </li>
+
+    </ul>
+
+
+
+    <!-- Contact -->
+
+    <div class="menu_contact">
+
+        <div class="contact_item">
+
+            <img src="../../assets/icons/Call.svg" alt="Call">
+
+            <span>(786) 713-8616</span>
+
+        </div>
+
+
+        <div class="contact_item">
+
+            <img src="../../assets/icons/Group 204.svg" alt="Store locator">
+
+            <span>Store locator</span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Social divider -->
+
+    <div class="social_divider">
+
+        <span></span>
+        <div></div>
+        <span></span>
+
+    </div>
+
+
+
+    <!-- Social -->
+
+    <div class="social">
+
+        <img src="../../assets/icons/Twitter.svg" alt="Twitter">
+
+        <img src="../../assets/icons/Instagram.svg" alt="Instagram">
+
+        <img src="../../assets/icons/youtube.svg" alt="Youtube">
+
+    </div>
+
+
+</aside>
+
+<!-- File JavaScript xử lý đóng mở -->
+<script src="menu.js"></script>
+
+</body>
+</html>
