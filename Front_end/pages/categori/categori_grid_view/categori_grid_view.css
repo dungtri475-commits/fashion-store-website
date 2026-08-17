@@ -1,0 +1,165 @@
+/* Thiết lập chung và căn giữa khung di động 375px */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    font-family: 'Tenor Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header container */
+#header-container {
+    width: 375px;
+    height: 60px;
+    background: #fff;
+}
+
+/* Main Content Wrapper */
+.main-content {
+    width: 375px;
+    background: #fff;
+    padding: 16px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Category Top section */
+.category-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.category-title-area h2 {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.category-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-dropdown, .btn-icon {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+}
+
+/* Filter Tags */
+.filter-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.remove-tag {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Product Grid (Cố định 2 cột cho khung 375px) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.product-card {
+    width: 165px;
+}
+
+.product-img-wrap {
+    width: 165px;
+    height: 220px;
+    position: relative;
+    background-color: #f3f3f3;
+}
+
+.product-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Thông tin sản phẩm */
+.product-info {
+    margin-top: 8px;
+}
+
+.product-brand {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    display: block;
+}
+
+.product-name {
+    font-size: 12px;
+    color: #333;
+    margin: 4px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-price {
+    font-size: 13px;
+    color: #dd8a68;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Phân trang */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 30px 0 20px 0;
+}
+
+.page-item {
+    background: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.page-item.active {
+    background: #333;
+    color: #fff;
+    border-radius: 50%;
+}
+
+/* Footer Container */
+#footer-container {
+    width: 375px;
+    height: 340px;
+    background: #fff;
+}
