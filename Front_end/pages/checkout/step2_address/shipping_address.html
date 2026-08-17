@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping Address - Open Fashion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./shipping_address.css">
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+  <div class="w-full max-w-[375px] bg-white min-h-[812px] shadow-lg flex flex-col justify-between relative">
+    
+    <div>
+      <!-- 1. HEADER -->
+      <header ></header>
+
+      <!-- 2. TITLE SECTION -->
+      <div class="text-center my-6">
+        <h2 class="text-sm font-semibold tracking-[0.3em] uppercase text-gray-800">CHECKOUT</h2>
+        <div class="flex items-center justify-center mt-2">
+          <div class="h-[1px] w-12 bg-gray-300"></div>
+          <div class="w-1.5 h-1.5 border border-gray-400 transform rotate-45 mx-1"></div>
+          <div class="h-[1px] w-12 bg-gray-300"></div>
+        </div>
+      </div>
+
+      <!-- 3. SHIPPING ADDRESS SECTION -->
+      <div class="px-4 mb-6">
+        <h3 class="text-[11px] font-semibold tracking-widest text-gray-400 uppercase mb-3">SHIPPING ADRESS</h3>
+        
+        <!-- Address Card -->
+        <div class="flex items-center justify-between py-2">
+          <div class="space-y-1">
+            <h4 class="text-sm font-bold text-gray-800">Iris Watson</h4>
+            <p class="text-xs text-gray-500 leading-relaxed">
+              606-3727 Ullamcorper. Street<br>
+              Roseville NH 11523
+            </p>
+            <p class="text-xs text-gray-500">(786) 713-8616</p>
+          </div>
+          <a href="../add_address/add_address.html" class="text-gray-400 hover:text-gray-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <a href="../add_address/add_address.html" class="mt-4 w-full bg-gray-50 rounded-full py-3 px-5 flex items-center justify-between text-xs text-gray-600 hover:bg-gray-100 transition">
+          <span>Add shipping adress</span>
+          <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 4. SHIPPING METHOD -->
+      <div class="px-4 mb-6">
+        <h3 class="text-[11px] font-semibold tracking-widest text-gray-400 uppercase mb-3">SHIPPING METHOD</h3>
+        
+        <div class="bg-gray-50 rounded-full py-3 px-5 flex items-center justify-between text-xs text-gray-600">
+          <span>Pickup at store</span>
+          <div class="flex items-center space-x-2">
+            <span class="font-medium text-gray-500">FREE</span>
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. PAYMENT METHOD -->
+      <div class="px-4 mb-6">
+        <h3 class="text-[11px] font-semibold tracking-widest text-gray-400 uppercase mb-3">PAYMENT METHOD</h3>
+        
+        <a href="../payment/payment_method.html" class="bg-gray-50 rounded-full py-3 px-5 flex items-center justify-between text-xs text-gray-400 hover:bg-gray-100 transition">
+          <span>select payment method</span>
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 6. FOOTER TOTAL & PLACE ORDER BUTTON -->
+    <div class="p-4 bg-white border-t border-gray-100">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-xs font-semibold tracking-widest uppercase text-gray-600">TOTAL</span>
+        <span class="text-sm font-semibold text-orange-400">$240</span>
+      </div>
+
+      <a href="../review/checkout_review.html" class="w-full bg-black text-white py-3.5 flex items-center justify-center space-x-2 text-xs uppercase tracking-widest hover:bg-gray-800 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <span>PLACE ORDER</span>
+      </a>
+    </div>
+
+  </div>
+
+  <script src="./shipping_address.js"></script>
+</body>
+</html>

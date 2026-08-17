@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Review - Open Fashion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Tenor Sans', sans-serif; }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+  <div class="w-full max-w-[375px] bg-white min-h-[812px] shadow-lg flex flex-col justify-between relative">
+    
+    <div>
+      <!-- 1. HEADER  -->
+      <header></header> 
+
+      <!-- 2. TITLE SECTION -->
+      <div class="text-center my-6">
+        <h2 class="text-sm font-semibold tracking-[0.3em] uppercase text-gray-800">CHECKOUT</h2>
+        <div class="flex items-center justify-center mt-2">
+          <div class="h-[1px] w-12 bg-gray-300"></div>
+          <div class="w-1.5 h-1.5 border border-gray-400 transform rotate-45 mx-1"></div>
+          <div class="h-[1px] w-12 bg-gray-300"></div>
+        </div>
+      </div>
+
+      <!-- 3. SHIPPING ADDRESS SUMMARY -->
+      <div class="px-4 mb-4">
+        <div class="flex items-center justify-between border-b border-gray-200 pb-3">
+          <div>
+            <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-widest">Shipping Address</p>
+            <p class="text-xs font-bold text-gray-800 mt-1">Iris Watson</p>
+            <p class="text-[11px] text-gray-500">606-3727 Ullamcorper. Street, Roseville NH 11523</p>
+            <p class="text-[11px] text-gray-500">(786) 713-8616</p>
+          </div>
+          <a href="../step2_address/shipping_address.html" class="text-gray-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. PAYMENT METHOD SUMMARY -->
+      <div class="px-4 mb-4">
+        <div class="flex items-center justify-between border-b border-gray-200 pb-3">
+          <div class="flex items-center space-x-3">
+            <div class="w-9 h-6 flex items-center justify-center bg-gray-50 rounded border border-gray-200">
+              <svg class="w-7 h-5" viewBox="0 0 38 24" fill="none">
+                <rect width="38" height="24" rx="3" fill="#1A1818"/>
+                <circle cx="15" cy="12" r="7" fill="#EB001B"/>
+                <circle cx="23" cy="12" r="7" fill="#F79E1B" fill-opacity="0.9"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-widest">Master Card</p>
+              <p class="text-xs font-medium text-gray-700">•••• •••• •••• 4567</p>
+            </div>
+          </div>
+          <a href="../payment/payment_method.html" class="text-gray-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. CART ITEMS REVIEW -->
+      <div class="px-4 space-y-3">
+        <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-widest">Items</p>
+        
+        <div class="flex items-center space-x-3">
+          <div class="w-16 h-20 bg-gray-100 flex-shrink-0">
+            <img src="/Front_end/assets/images/category/category_Grid_view/category1.png" alt="Lamerei Cardigan" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xs font-bold uppercase tracking-widest text-gray-800">LAMEREI</h3>
+            <p class="text-[10px] text-gray-500 mt-0.5">Recycle Boucle Knit Cardigan</p>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-xs text-gray-500">Qty: 1</span>
+              <span class="text-xs text-orange-400 font-medium">$120</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 6. FOOTER TOTAL & PLACE ORDER BUTTON -->
+    <div class="p-4 bg-white border-t border-gray-100">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-xs font-semibold tracking-widest uppercase text-gray-600">TOTAL</span>
+        <span class="text-sm font-semibold text-orange-400" id="review-total-price">$120</span>
+      </div>
+
+      <button id="btn-place-order" class="w-full bg-black text-white py-3.5 flex items-center justify-center space-x-2 text-xs uppercase tracking-widest hover:bg-gray-800 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <span>PLACE ORDER</span>
+      </button>
+    </div>
+
+  </div>
+
+  <script src="./checkout_review.js"></script>
+</body>
+</html>

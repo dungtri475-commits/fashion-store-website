@@ -1,6 +1,5 @@
-/* Fix font chữserif cho Title (dựa theo trang Home mẫu) */
 .font-serif {
-  font-family: 'Lille', serif; /* Thay bằng tên font chuẩn nếu ní biết */
+  font-family: 'Lille', serif; 
 }
 
 /* 1. PRODUCT GALLERY STYLING */
@@ -25,7 +24,7 @@
 
 /* 2. VARIANT SELECTORS STYLING */
 .selector-label {
-  width: 50px; /* Căn lề đều cho chữ Color/Size */
+  width: 50px; 
   display: inline-block;
 }
 
@@ -38,7 +37,6 @@
 }
 
 .color-selector .color-dot.active {
-  /* Class khi được chọn (ví dụ: Black) */
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px #000;
 }
 
@@ -55,28 +53,24 @@
 }
 
 .size-selector .size-btn.active {
-  /* Class khi được chọn */
   background-color: #000;
   border-color: #000;
   color: #fff;
 }
 
 /* 3. ADD TO CART BAR STYLING */
-/* Thanh bar màu đen cố định ở dưới max-width 520px */
 .action-bar {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
-/* CUSTOM CARE ICONS (Nếu không dùng ảnh thật) */
 .care-icons img {
   opacity: 0.8;
   vertical-align: middle;
 }
 
-/* 4. RELATED PRODUCTS STYLING */
 .related-products h3 {
-  letter-spacing: 0.15em; /* Tăng trackingwidest */
+  letter-spacing: 0.15em; 
 }
 
 .product-card .like-btn svg {
@@ -84,10 +78,9 @@
 }
 
 .product-card .like-btn:hover svg {
-  stroke: #ff7c1a; /* Đổi màu khi hover */
+  stroke: #ff7c1a; 
 }
 
-/* FOOTER STYLING */
 .divider-diamond {
   display: flex;
   align-items: center;
