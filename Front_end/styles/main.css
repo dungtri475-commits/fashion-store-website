@@ -5,7 +5,6 @@
 @import url("../components/layout/footer/footer.css");
 /* Pages */
 @import url("../pages/home/home.css");
-@import url("../pages/blog/blog.css");
 
 body {
     margin: 0;
@@ -19,7 +18,7 @@ body {
 }
 
 .layout--narrow {
-    max-width: 520px;
+    max-width: 375px;
 }
 
 .layout--wide {
