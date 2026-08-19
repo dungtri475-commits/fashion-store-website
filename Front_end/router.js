@@ -4,10 +4,13 @@
  * Dieu huong trang se phat trien sau tai day 
  */
 import {HomePage} from "./pages/home/home.js";
-import {
-    renderBlogDetailPage,
-    renderBlogListPage
-} from "./pages/blog/blog.js";
+import { handleBlogRoute } from "./pages/blogs/blog.router.js";
+
+const moduleRouters = {
+    blog: handleBlogRoute
+    // menu
+    // collection
+};
 
 function getAppContainer() {
     return document.getElementById("app");
@@ -15,53 +18,54 @@ function getAppContainer() {
 
 export function goToHome(){
     const app = getAppContainer();
+
     if (!app) return;
 
     app.innerHTML = HomePage();
 }
 
-export function initRouter(){
-    const renderRoute = async () => {
-        const app = getAppContainer();
+// ham dinh nghia Router
+function parseRoute() {
+    const hash = window.location.hash || "#/home";
 
-        if (!app) {
-            return;
-        }
+    return hash
+         .replace(/^#\//, "")
+         .split("/")
+         .filter(Boolean);
+}
 
-        const hash = window.location.hash || "#/home";
-        const blogDetailMatch = hash.match(/^#\/blog\/([^/?#]+)$/);
+// ham renderRoute
+function renderRoute() {
+    const [moduleName, ...moduleRoute] = parseRoute();
 
-        switch (hash) {
-            case "#/home":
-                goToHome();
-                break;    
-            case "#/blog":
-                await renderBlogListPage(app, "all");
-                break;
-            case "#/blog/latest":
-                await renderBlogListPage(app, "latest");
-                break;
-            case "#/blog/popular":
-                await renderBlogListPage(app, "popular");
-                break;
-            default:
-                if (blogDetailMatch) {
-                    await renderBlogDetailPage(app, decodeURIComponent(blogDetailMatch[1]));
-                    break;
-                }
+    if (!moduleName || moduleName === "home") {
+        goToHome();
+        return;
+    }
 
-                goToHome();
-                break;
-        }
-    };
+    const moduleRouter = moduleRouters[moduleName];
 
-    window.addEventListener("hashchange", () => {
-        renderRoute().catch((error) => {
-            console.error(error);
-        });
-    });
+    if (!moduleRouter) {
+        console.warn (`Không tìm thấy module router: ${moduleName}`);
+        goToHome();
+        return;
+    }
 
-    renderRoute().catch((error) => {
-        console.error(error);
-    });
+    // Router cap toan cuc khong xu ly logic ben trong Blog
+    moduleRouter(moduleRoute);
+}
+
+export function navigateTo(route) {
+    const hash = route.startsWith("#")
+         ? route
+         : `#/${route.replace(/^\//, "")}`;
+
+    if (window.location.hash !== hash) {
+        window.location.hash = hash;
+    }   
+}
+
+export function initRouter() {
+    window.addEventListener("hashchange", renderRoute);
+    renderRoute();
 }
