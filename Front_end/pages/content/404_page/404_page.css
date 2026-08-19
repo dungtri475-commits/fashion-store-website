@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+
+/* 1. Reset CSS toàn trang */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Tenor Sans', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Khung Frame Mobile 375px chuẩn Figma */
+.page_frame {
+  width: 375px;
+  min-height: 797px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2. FIX HEADER CHUẨN FIGMA */
+#header-component {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 10px 16px;
+  background-color: #ffffff;
+}
+
+/* Xóa bỏ hoàn toàn ô vuông viền xung quanh các Icon */
+#header-component button,
+#header-component a,
+#header-component div {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Căn khoảng cách giữa 2 icon Tìm kiếm & Giỏ hàng ở bên phải */
+#header-component .header-right,
+#header-component .icons-group,
+#header-component nav:nth-child(3) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#header-component svg,
+#header-component img {
+  display: block;
+  object-fit: contain;
+}
+
+/* 3. NỘI DUNG MAIN 404 */
+.not_found_container {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.not_found_title {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 18px;
+  line-height: 40px;
+  letter-spacing: 4px;
+  font-weight: 400;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 22.67px;
+}
+
+.icon_tailors_dummy {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22.61px;
+}
+
+.not_found_description {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 21.53px;
+}
+
+/* Button HOME PAGE */
+.btn_home {
+  width: 196px;
+  height: 40px;
+  padding: 8px 30px;
+  gap: 8px;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.icon_arrow_forward {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(180deg);
+}
+
+.btn_text {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #FCFCFC;
+  white-space: nowrap;
+}
+
+/* 4. FOOTER */
+#footer-component {
+  width: 100%;
+  margin-top: auto;
+}
