@@ -1,7 +1,7 @@
 // file dieu huong cua toan bo fron-end
 
 /**
- * Dieu huong trang se phat trien sau tai day 
+ * Dieu huong trang se phat trien sau tai day
  */
 import {HomePage} from "./pages/home/home.js";
 import {

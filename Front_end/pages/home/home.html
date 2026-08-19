@@ -1,29 +1,4 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Open Fashion - Home</title>
-  
-  <!-- CSS Library & Fonts -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&display=swap" rel="stylesheet">
-
-  <!-- Component Styles -->
-  <link rel="stylesheet" href="../../components/common/common.css">
-  <link rel="stylesheet" href="../../components/layout/header/header.css">
-  <link rel="stylesheet" href="../../components/layout/footer/footer.css">
-  <link rel="stylesheet" href="./home.css">
-</head>
-<body class="bg-white flex flex-col items-center">
-
-  <!-- Main Container (Mobile View) -->
-  <div class="w-full max-w-[375px] bg-white shadow-2xl min-h-screen relative overflow-hidden pb-10">
-
-    <!-- Header Component -->
-    <div id="header"></div>
+<div class="home-page min-h-screen bg-white overflow-hidden pb-10">
 
     <!-- Hero Banner Section -->
     <section class="relative w-full aspect-[3/5] bg-gray-100 flex items-center justify-center text-center overflow-hidden">
@@ -146,7 +121,7 @@
       <!-- Video Banner -->
       <div class="relative w-full aspect-[16/9] bg-gray-300 overflow-hidden flex items-center justify-center">
         <img src="../../assets/images/homePage/videos/Video.png" alt="Video Preview" class="w-full h-full object-cover">
-        <button class="w-10 h-10 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center text-white absolute">
+        <button type="button" aria-label="Play video" class="w-10 h-10 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center text-white absolute">
           <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </button>
       </div>
@@ -261,10 +236,7 @@
       </div>
     </section>
 
-    <!-- Footer Component -->
-    <div id="footer"></div>
-
-  </div>
+</div>
 
   <script type="module" src="./home.js"></script>
 
