@@ -5,11 +5,22 @@
 @import url("../components/layout/footer/footer.css");
 /* Pages */
 @import url("../pages/home/home.css");
-@import url("../pages/blog/blog.css");
 
 body {
     margin: 0;
     background: #d9d9d9;
+}
+
+:root {
+    --font-primary: "Tenor Sans", sans-serif;
+    --color-text: #333333;
+    --color-muted: #555555;
+    --color-price: #dd8560;
+    --color-background: #fcfcfc;
+    --container-width: 1280px;
+    --mobile-padding: 16px;
+    --tablet-padding: 24px;
+    --desktop-padding: 32px;
 }
 
 .site-shell {
@@ -19,7 +30,7 @@ body {
 }
 
 .layout--narrow {
-    max-width: 520px;
+    max-width: 375px;
 }
 
 .layout--wide {
@@ -32,4 +43,18 @@ body {
 
 .site-content {
     min-height: 60vh;
+}
+
+/* Tablet: retain a readable editorial column while allowing two-column content. */
+@media (min-width: 600px) {
+    .layout--narrow {
+        max-width: 720px;
+    }
+}
+
+/* Desktop: use the available canvas without stretching individual components. */
+@media (min-width: 1024px) {
+    .layout--narrow {
+        max-width: 960px;
+    }
 }

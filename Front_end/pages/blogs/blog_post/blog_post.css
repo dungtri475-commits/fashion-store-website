@@ -33,6 +33,20 @@ a {
     overflow: hidden;
 }
 
+/* Blog detail uses the whole viewport on tablet and desktop. */
+@media (min-width: 600px) {
+    body.blog-post-page {
+        background: #ffffff;
+    }
+
+    .app-wrapper {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        box-shadow: none;
+    }
+}
+
 .header {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
