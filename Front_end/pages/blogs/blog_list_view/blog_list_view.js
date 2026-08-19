@@ -1,3 +1,41 @@
+import { initBlogLayoutNavigator, initBlogNavigator } from "../blog.router.js";
+import { navigateToBlogPost } from "../blog_post/blog_post_router.js";
+
+const LIST_POST_IDS = [5, 6, 7, 8, 4, 9];
+
+const moreListPosts = [
+    {
+        postId: 1,
+        image: "Blog1.png",
+        alt: "2021 Style Guide",
+        title: "2021 STYLE GUIDE: THE BIGGEST FALL TRENDS",
+        description:
+            "The excitement of fall fashion is here and I'm already loving some of the trend forecasts.",
+        date: "08/10/2021"
+    },
+    {
+        postId: 2,
+        image: "Blog2.png",
+        alt: "Street style looks",
+        title: "THE BEST STREET STYLE LOOKS FOR FALL",
+        description:
+            "The excitement of fall fashion is here and I'm already loving some of the trend forecasts.",
+        date: "05/10/2021"
+    },
+    {
+        postId: 3,
+        image: "Blog3.png",
+        alt: "Fall basics",
+        title: "HOW TO STYLE YOUR FAVORITE FALL BASICS",
+        description:
+            "The excitement of fall fashion is here and I'm already loving some of the trend forecasts.",
+        date: "02/10/2021"
+    }
+];
+
+let currentListPostIndex = 0;
+const LIST_POSTS_PER_LOAD = 3;
+
 document.addEventListener("DOMContentLoaded", () => {
     // Nạp Header component nếu có thẻ chứa
     const headerContainer = document.getElementById("header-component");
@@ -51,4 +89,78 @@ document.addEventListener("DOMContentLoaded", () => {
             </footer>
         `;
     }
+
+    initBlogNavigator(".tag-item", "promo");
+    initBlogLayoutNavigator();
+    initBlogPostNavigation();
+    initListLoadMore();
 });
+
+function initBlogPostNavigation() {
+    document.querySelectorAll(".blog-card").forEach((card, index) => {
+        card.addEventListener("click", () => {
+            const postId = LIST_POST_IDS[index];
+
+            if (!postId) {
+                console.warn("Card chưa có static post tương ứng.");
+                return;
+            }
+
+            navigateToBlogPost(postId);
+        });
+    });
+}
+
+function initListLoadMore() {
+    const loadMoreButton = document.querySelector(".btn-load-more");
+
+    if (!loadMoreButton) {
+        return;
+    }
+
+    loadMoreButton.addEventListener("click", () => {
+        const nextPosts = moreListPosts.slice(
+            currentListPostIndex,
+            currentListPostIndex + LIST_POSTS_PER_LOAD
+        );
+
+        nextPosts.forEach((post) => {
+            appendBlogCard(post);
+        });
+
+        currentListPostIndex += nextPosts.length;
+
+        if (currentListPostIndex >= moreListPosts.length) {
+            loadMoreButton.style.display = "none";
+        }
+    });
+}
+
+function appendBlogCard(post) {
+    const blogList = document.querySelector(".blog-list");
+
+    if (!blogList) {
+        return;
+    }
+
+    const card = document.createElement("article");
+
+    card.className = "blog-card";
+    card.innerHTML = `
+        <div class="blog-image">
+            <img src="../../../assets/images/blogGridView/${post.image}" alt="${post.alt}">
+        </div>
+        <div class="blog-content">
+            <h2 class="blog-card-title">${post.title}</h2>
+            <p class="blog-card-desc">${post.description}</p>
+            <span class="blog-card-date">${post.date}</span>
+        </div>
+    `;
+
+    card.addEventListener("click", () => {
+        navigateToBlogPost(post.postId);
+    });
+
+    blogList.appendChild(card);
+}
+
