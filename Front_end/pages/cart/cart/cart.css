@@ -1,0 +1,556 @@
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff;
+
+    font-family: "Tenor Sans", sans-serif;
+
+    /* Căn frame 375px giữa màn hình Desktop */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+/* =========================================
+   CART FRAME
+   375 × 640
+   ========================================= */
+
+.cart-container {
+    width: 375px;
+    min-width: 375px;
+
+    height: 640px;
+    min-height: 640px;
+
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+   24 × 24
+   Top: 10px
+   Left: 16px
+   ========================================= */
+
+.close-btn {
+    width: 24px;
+    height: 24px;
+
+    margin-top: 10px;
+    margin-left: 16px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+.close-btn img {
+    width: 24px;
+    height: 24px;
+
+    display: block;
+}
+
+
+/* =========================================
+   CART TITLE
+   64 × 40
+   Top: 42px
+   Left: 17px
+
+   Tenor Sans
+   18px
+   Weight 400
+   Line Height 40px
+   Letter Spacing 4px
+   ========================================= */
+
+.cart-title {
+    width: 64px;
+    height: 40px;
+
+    margin-top: 8px;
+    margin-left: 17px;
+
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 4px;
+
+    color: #333333;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   CART ITEMS
+   ========================================= */
+
+.cart-items {
+    width: 313.43px;
+
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   CART ITEM
+   313.43 × 134
+   ========================================= */
+
+.cart-item {
+    width: 313.43px;
+    height: 134px;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 12.43px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   PRODUCT IMAGE
+   100 × 134
+   ========================================= */
+
+.item-image {
+    width: 100px;
+    height: 134px;
+
+    min-width: 100px;
+    min-height: 134px;
+
+    flex-shrink: 0;
+
+    display: block;
+
+    object-fit: cover;
+
+    background: #f5f5f5;
+}
+
+
+/* =========================================
+   PRODUCT INFO
+   201 × 116
+   Gap: 12px
+   ========================================= */
+
+.item-details {
+    width: 201px;
+    height: 116px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   HEADER TEXT GROUP
+   Vertical Auto Layout
+   Gap: 6px
+   ========================================= */
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   BRAND
+   14 × 20
+   Letter Spacing: 2px
+   ========================================= */
+
+.item-brand {
+    width: fit-content;
+    min-height: 20px;
+
+    margin: 0;
+
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+
+    color: #000000;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   PRODUCT DESCRIPTION
+   12 × 18
+   ========================================= */
+
+.item-desc {
+    margin: 0;
+
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0;
+
+    color: #555555;
+
+    /* Cho phép xuống dòng nếu cần */
+    white-space: normal;
+}
+
+
+/* =========================================
+   QUANTITY CONTROL
+   78 × 24
+   Border: 1px solid #C4C4C4
+   ========================================= */
+
+.quantity-control {
+    width: 78px;
+    height: 24px;
+
+    border: 1px solid #c4c4c4;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   MINUS / PLUS BUTTON
+   ========================================= */
+
+.qty-btn {
+    width: 24px;
+    height: 22px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+
+    color: #000000;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   QUANTITY NUMBER
+   14 × 14
+   ========================================= */
+
+.qty-text {
+    width: 30px;
+    height: 14px;
+
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+
+    color: #000000;
+
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   PRODUCT PRICE
+   ========================================= */
+
+.item-price {
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+
+    color: #000000;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   CART SUMMARY
+   Width: 343px
+   Left: 16px
+   ========================================= */
+
+.cart-summary {
+    width: 343px;
+
+    margin-left: 16px;
+    margin-right: 16px;
+
+    margin-top: 20px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   DIVIDER
+   343 × 1
+   Black 20%
+   ========================================= */
+
+.divider {
+    width: 343px;
+    height: 1px;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   SUBTOTAL
+   ========================================= */
+
+.subtotal {
+    width: 343px;
+    height: 35px;
+
+    margin-top: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* SUB TOTAL */
+
+.subtotal-text {
+    width: 95px;
+    height: 20px;
+
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+
+    color: #000000;
+
+    text-transform: uppercase;
+
+    /* QUAN TRỌNG:
+       Không cho SUB TOTAL xuống dòng */
+    white-space: nowrap;
+
+    flex-shrink: 0;
+}
+
+
+/*  $240 */
+
+.subtotal-price {
+    width: 46px;
+    height: 35px;
+
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 34.5px;
+    letter-spacing: 3px;
+
+    color: #dd8560;
+
+    text-align: right;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+}
+
+
+/* DISCLAIMER*/
+
+.disclaimer {
+    width: 308.37px;
+    height: 71.01px;
+
+    margin-top: 6.93px;
+
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+
+    color: #888888;
+
+    white-space: normal;
+}
+
+
+/* BUY NOW BUTTON */
+
+.buy-now-btn {
+    width: 375px;
+    height: 56px;
+
+    margin-top: auto;
+
+    padding: 15px 16px;
+
+    border: none;
+    outline: none;
+
+    background: #000000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 24px;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+
+/*  SHOPPING BAG ICON */
+
+.buy-now-icon {
+    width: 20px;
+    height: 20px;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+
+/* BUY NOW TEXT */
+
+.buy-now-btn span {
+    width: 84px;
+    height: 26px;
+
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0.01em;
+
+    color: #fcfcfc;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+}
+
+
+/*  HOVER */
+
+.buy-now-btn:hover {
+    background: #111111;
+}
+
+
+/*  RESPONSIVE */
+
+@media (max-width: 375px) {
+
+    body {
+        justify-content: flex-start;
+    }
+
+    .cart-container {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .buy-now-btn {
+        width: 100%;
+    }
+}
