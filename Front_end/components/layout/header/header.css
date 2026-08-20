@@ -52,3 +52,13 @@
     width: 24px;
     height: 24px;
 }
+
+.header_logo:focus-visible{
+    outline: 2px solid #d48371;
+    outline-offset: 6px;
+}
+
+.header_menu-btn:focus-visible{
+    outline: 2px solid #d48371;
+    outline-offset: 4px;
+}
