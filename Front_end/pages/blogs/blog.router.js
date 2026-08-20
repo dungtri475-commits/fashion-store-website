@@ -103,6 +103,11 @@ export function initBlogLayoutNavigator() {
 export function handleBlogRoute(routeParts =[]) {
     const [pageName = "fashion", postId] = routeParts;
 
+    if (/^\d+$/.test(String(pageName))) {
+        navigateToBlogPost(pageName);
+        return;
+    }
+
     switch (pageName.toLowerCase()) {
         case "fashion":
            navigateToBlog("fashion"); // -> GridView
