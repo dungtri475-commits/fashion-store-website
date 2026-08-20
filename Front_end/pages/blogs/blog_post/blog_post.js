@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderLayoutSection("header-component", Header);
     renderLayoutSection("footer-component", Footer);
     initBlogLayoutNavigator();
+    initBackToBlogButton(); // quay lai trang gan nhat
     initCarousel();
 });
 
@@ -36,6 +37,26 @@ function fixIconPaths(container) {
             image.src = `../../../assets/icons/${fileName}`;
         }
     });
+}
+
+function initBackToBlogButton() {
+    const carousel = document.querySelector(".blog-carousel");
+
+    if (!carousel || carousel.querySelector(".blog-back-button")) {
+        return;
+    }
+
+    const backButton = document.createElement("a");
+    backButton.className = "blog-back-button";
+    backButton.href = new URL("../blog_grid_view/blog_grid_view.html", import.meta.url).href;
+    backButton.setAttribute("aria-label", "Back to blog list");
+    backButton.innerHTML = `
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 12H5M11 18l-6-6 6-6"></path>
+        </svg>
+    `;
+
+    carousel.append(backButton);
 }
 
 function initCarousel() {
