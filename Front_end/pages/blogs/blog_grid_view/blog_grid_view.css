@@ -75,7 +75,6 @@ body {
   white-space: nowrap;
   margin-top: 12px;
   padding-bottom: 4px;
-  scrollbar-width: none;
 }
 
 .blog-categories::-webkit-scrollbar {
@@ -229,21 +228,4 @@ body {
   font-size: 16px;
   font-weight: 300;
   line-height: 1;
-}
-
-/* Mobile baseline: never force horizontal scrolling on narrow devices. */
-.mobile-wrapper, .blog-container { width: min(100%, 375px); }
-
-@media (min-width: 600px) {
-  .mobile-wrapper { width: 100%; max-width: none; }
-  .blog-container { width: 100%; padding: 28px; }
-  .blog-categories { justify-content: center; }
-  .blog-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
-  .blog-image-wrapper { height: auto; aspect-ratio: 4 / 5; }
-}
-
-@media (min-width: 1024px) {
-  .mobile-wrapper { width: 100%; max-width: none; }
-  .blog-container { padding: 40px 48px; }
-  .blog-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 28px; }
 }

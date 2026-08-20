@@ -299,3 +299,11 @@ a {
         aspect-ratio: 3 / 4;
     }
 }
+
+@media (min-width: 768px) {
+    .app-wrapper { width: 100%; max-width: 960px; margin-inline: auto; }
+}
+
+@media (min-width: 1200px) {
+    .app-wrapper { max-width: 1280px; }
+}
