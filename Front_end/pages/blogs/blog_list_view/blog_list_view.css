@@ -13,7 +13,7 @@ body {
 }
 
 .app-wrapper {
-  width: 375px; /* Chuẩn kích thước Frame Figma */
+  width: min(100%, 375px);
   background-color: #ffffff;
   min-height: 100vh;
   display: flex;
@@ -103,8 +103,8 @@ body {
 
 /* Khung bọc card: 344px x 100px theo đúng Inspector */
 .blog-card {
-  width: 344px;
-  height: 100px;
+  width: 100%;
+  min-height: 100px;
   display: flex;
   gap: 12px;
   align-items: center;
@@ -113,7 +113,8 @@ body {
 /* Khối Ảnh bên trái */
 .blog-image {
   width: 100px;
-  height: 100px;
+  height: auto;
+  aspect-ratio: 120 / 155;
   flex-shrink: 0;
 }
 
@@ -129,7 +130,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  width: 232px; /* 344px - 100px - 12px gap = 232px */
+  width: auto;
+  min-width: 0;
+  flex: 1;
 }
 
 .blog-card-title {
@@ -181,4 +184,37 @@ body {
 
 .plus-icon {
   font-size: 16px;
+}
+
+@media (min-width: 600px) {
+  .app-wrapper { width: 100%; max-width: none; }
+  .blog-container { width: 100%; margin: 0; padding: 32px; }
+  .blog-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .blog-card {
+    min-height: 220px;
+    gap: 20px;
+    align-items: stretch;
+    padding: 16px;
+    border: 1px solid #eeeeee;
+  }
+  .blog-image {
+    width: clamp(150px, 18vw, 260px);
+    aspect-ratio: 4 / 5;
+  }
+  .blog-content {
+    justify-content: center;
+    gap: 10px;
+  }
+  .blog-card-title { font-size: 14px; }
+  .blog-card-desc { font-size: 13px; }
+  .blog-card-date { font-size: 12px; }
+}
+
+@media (min-width: 1200px) {
+  .blog-container { padding: 48px; }
+  .blog-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
