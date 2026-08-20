@@ -9,9 +9,9 @@ export function Header() {
        </div>
 
        <div class = "header_center">
-         <h1 class = "header_logo">
+         <a href="#/home" class = "header_logo" aria-label="Open Fashion home">
               Open Fashion
-         </h1>
+         </a>
 
        </div>
        
