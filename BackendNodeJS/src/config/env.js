@@ -24,7 +24,8 @@ const env = {
     NODE_ENV: process.env.NODE_ENV || "development",
     PORT: Number(process.env.PORT) || 3000,
     MONGODB_URI: getRequiredEnv("MONGODB_URI"),
-    CORS_ORIGIN: process.env.CORS_ORIGIN || "http://localhost:5500"
+    CORS_ORIGIN: process.env.CORS_ORIGIN || "http://localhost:5500",
+    JWT_SECRET: getRequiredEnv("JWT_SECRET")
 };
 
 export default env;

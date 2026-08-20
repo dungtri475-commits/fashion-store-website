@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success - Open Fashion</title>
+    <link rel="stylesheet" href="./payment_success.css">
+</head>
+
+<body>
+
+    <!-- PAYMENT SUCCESS OVERLAY -->
+    <div class="payment-success-overlay">
+
+        <!-- PAYMENT SUCCESS MODAL -->
+        <section class="payment-success-modal" aria-labelledby="payment-success-title">
+
+            <!-- Close -->
+            <button type="button" class="payment-success-close" id="close-payment-success" aria-label="Close payment success">
+                ×
+            </button>
+
+            <!-- TITLE -->
+            <h1 id="payment-success-title" class="payment-success-title">
+                PAYMENT SUCCESS
+            </h1>
+
+            <!-- SUCCESS ICON -->
+            <div class="success-icon" aria-hidden="true">
+                <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="23" cy="23" r="21" stroke="#A8715A" stroke-width="2" />
+                    <path d="M14 23.5L20 29L32 17" stroke="#A8715A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+
+            <!-- PAYMENT MESSAGE -->
+            <div class="payment-info">
+                <p class="payment-message">
+                    Your payment was success
+                </p>
+                <p class="payment-id">
+                    Payment ID <span id="payment-id">15263541</span>
+                </p>
+            </div>
+
+            <!-- DIVIDER -->
+            <div class="divider" aria-hidden="true"></div>
+
+            <!-- RATING -->
+            <div class="rating-section">
+
+                <p class="rating-title">
+                    Rate your purchase
+                </p>
+
+                <div class="rating-group">
+
+                    <!-- Disappointed -->
+                    <button type="button" class="rating-button" data-rating="disappointed" aria-label="Disappointed">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="19" stroke="#555555" stroke-width="1.5" />
+                            <circle cx="14" cy="17" r="1.5" fill="#555555" />
+                            <circle cx="26" cy="17" r="1.5" fill="#555555" />
+                            <path d="M13 27C16 23.5 24 23.5 27 27" stroke="#555555" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </button>
+
+                    <!-- Happy -->
+                    <button type="button" class="rating-button" data-rating="happy" aria-label="Happy">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="19" stroke="#555555" stroke-width="1.5" />
+                            <circle cx="14" cy="17" r="1.5" fill="#555555" />
+                            <circle cx="26" cy="17" r="1.5" fill="#555555" />
+                            <path d="M13 23C16 27 24 27 27 23" stroke="#555555" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </button>
+
+                    <!-- In Love -->
+                    <button type="button" class="rating-button" data-rating="in-love" aria-label="In love">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="19" stroke="#555555" stroke-width="1.5" />
+                            <path d="M12.5 18.5 C12.5 15.5 16.5 14 20 17 C23.5 14 27.5 15.5 27.5 18.5 C27.5 23 20 28 20 28 C20 28 12.5 23 12.5 18.5Z" stroke="#555555" stroke-width="1.5" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- ACTION GROUP -->
+            <div class="action-group">
+                <button type="button" class="submit-button" id="submit-rating">
+                    SUBMIT
+                </button>
+                <button type="button" class="back-home-button" id="back-to-home">
+                    BACK TO HOME
+                </button>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="./payment_success.js"></script>
+
+</body>
+
+</html>

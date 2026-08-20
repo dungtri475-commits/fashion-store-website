@@ -1,6 +1,5 @@
 import { Router } from "express";
-
-// sau nay import cac route tu cac file khac vao day
+import blogsRouter from "../modules/blogs/blogs.js";
 
 const router = Router();
 
@@ -18,5 +17,7 @@ router.get("/health", (req, res) => {
         timestamp: new Date().toISOString()
     });
 });
+
+router.use("/blogs", blogsRouter);
 
 export default router;

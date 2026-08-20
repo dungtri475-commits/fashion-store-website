@@ -3,7 +3,56 @@
 /**
  * Dieu huong trang se phat trien sau tai day
  */
+import {HomePage} from "./pages/home/home.js";
+import { handleBlogRoute } from "./pages/blogs/blog.router.js";
+import { handleMenuRoute } from "./pages/menu/menu.router.js";
+
+function getAppContainer() {
+    return document.getElementById("app");
+}
+
+export function renderHome(){
+    const app = getAppContainer();
+    if (!app) return;
+
+    app.innerHTML = HomePage();
+}
 
 export function initRouter(){
-    console.log("Router Initialized");
+    const renderRoute = () => {
+        const app = getAppContainer();
+
+        if (!app) {
+            return;
+        }
+
+        const hash = window.location.hash || "#/home";
+        const routeParts = hash
+            .replace(/^#?\//, "")
+            .split("/")
+            .filter(Boolean);
+        const [moduleName = "home", ...childRoutes] = routeParts;
+
+        switch (moduleName) {
+            case "home":
+                renderHome();
+                break;    
+            case "blog":
+                handleBlogRoute(childRoutes);
+                break;
+            case "menu":
+                handleMenuRoute(childRoutes);
+                break;
+            default:
+                console.warn("Route không tồn tại:", hash);
+                window.location.hash = "#/home";
+                break;
+        }
+    };
+
+    window.addEventListener("hashchange", () => {
+        renderRoute();
+    });
+
+    renderRoute();
 }

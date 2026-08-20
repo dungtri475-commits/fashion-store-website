@@ -35,7 +35,10 @@
     text-align: center;
     text-wrap: balance;
     color: #2a2a2a;
+<<<<<<< HEAD
     text-decoration: none;
+=======
+>>>>>>> origin/main
 }
 
 .header_logo::after{
@@ -52,6 +55,7 @@
     width: 24px;
     height: 24px;
 }
+<<<<<<< HEAD
 
 .header_logo:focus-visible{
     outline: 2px solid #d48371;
@@ -62,3 +66,5 @@
     outline: 2px solid #d48371;
     outline-offset: 4px;
 }
+=======
+>>>>>>> origin/main

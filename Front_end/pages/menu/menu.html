@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu UI</title>
+
+    <link rel="stylesheet" href="menu.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<aside class="menu">
+
+    <!-- Close -->
+    <div class="menu_header">
+        <button class="menu_close-btn" type="button" aria-label="Close menu">
+            <img src="../../assets/icons/Close.svg" alt="Close">
+        </button>
+    </div>
+
+
+    <!-- Tabs -->
+    <div class="menu_tabs">
+
+        <button class="menu_tab active" type="button" data-audience="women" aria-pressed="true">
+            WOMEN
+        </button>
+
+        <button class="menu_tab" type="button" data-audience="man" aria-pressed="false">
+            MAN
+        </button>
+
+        <button class="menu_tab" type="button" data-audience="kids" aria-pressed="false">
+            KIDS
+        </button>
+
+    </div>
+
+
+    <div class="menu_divider"></div>
+
+
+    <!-- List -->
+    <ul class="menu_list">
+
+        <li class="menu-link" data-category="new" tabindex="0" role="link">
+            <span>New</span>
+            <img src="../../assets/icons/Forward.svg" alt="Arrow">
+        </li>
+
+        <!-- Mục Apparel mở rộng (Expand) có gắn ID để xử lý JS -->
+        <li class="menu-item-dropdown active" id="apparel-toggle">
+            <button class="dropdown-toggle" type="button" aria-expanded="true" aria-controls="apparel-submenu">
+                <span>Apparel</span>
+                <img src="../../assets/icons/Forward.svg" alt="Arrow" class="arrow-icon">
+            </button>
+            
+            <ul class="submenu" id="apparel-submenu">
+                <li class="submenu-link" data-category="outer" tabindex="0">Outer</li>
+                <li class="submenu-link" data-category="dress" tabindex="0">Dress</li>
+                <li class="submenu-link" data-category="blouse-shirt" tabindex="0">Blouse/Shirt</li>
+                <li class="submenu-link" data-category="t-shirt" tabindex="0">T-Shirt</li>
+                <li class="submenu-link" data-category="knitwear" tabindex="0">Knitwear</li>
+                <li class="submenu-link" data-category="skirt" tabindex="0">Skirt</li>
+                <li class="submenu-link" data-category="pants" tabindex="0">Pants</li>
+                <li class="submenu-link" data-category="denim" tabindex="0">Denim</li>
+                <li class="submenu-link" data-category="kids" tabindex="0">Kids</li>
+            </ul>
+        </li>
+
+        <li class="menu-link" data-category="bag" tabindex="0" role="link">
+            <span>Bag</span>
+            <img src="../../assets/icons/Forward.svg" alt="Arrow">
+        </li>
+
+        <li class="menu-link" data-category="shoes" tabindex="0" role="link">
+            <span>Shoes</span>
+            <img src="../../assets/icons/Forward.svg" alt="Arrow">
+        </li>
+
+        <li class="menu-link" data-category="beauty" tabindex="0" role="link">
+            <span>Beauty</span>
+            <img src="../../assets/icons/Forward.svg" alt="Arrow">
+        </li>
+
+        <li class="menu-link" data-category="accessories" tabindex="0" role="link">
+            <span>Accessories</span>
+            <img src="../../assets/icons/Forward.svg" alt="Arrow">
+        </li>
+
+    </ul>
+
+
+
+    <!-- Contact -->
+
+    <div class="menu_contact">
+
+        <a class="contact_item" href="tel:+17867138616">
+
+            <img src="../../assets/icons/Call.svg" alt="Call">
+
+            <span>(786) 713-8616</span>
+
+        </a>
+
+
+        <button class="contact_item store-locator-btn" type="button" data-feature="Store locator">
+
+            <img src="../../assets/icons/Group 204.svg" alt="Store locator">
+
+            <span>Store locator</span>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- Social divider -->
+
+    <div class="social_divider">
+
+        <span></span>
+        <div></div>
+        <span></span>
+
+    </div>
+
+
+
+    <!-- Social -->
+
+    <div class="social">
+
+        <button type="button" class="social-btn" data-feature="Twitter" aria-label="Twitter">
+            <img src="../../assets/icons/Twitter.svg" alt="Twitter">
+        </button>
+
+        <button type="button" class="social-btn" data-feature="Instagram" aria-label="Instagram">
+            <img src="../../assets/icons/Instagram.svg" alt="Instagram">
+        </button>
+
+        <button type="button" class="social-btn" data-feature="Youtube" aria-label="Youtube">
+            <img src="../../assets/icons/youtube.svg" alt="Youtube">
+        </button>
+
+    </div>
+
+
+</aside>
+<div class="menu_toast" role="status" aria-live="polite"></div>
+
+<!-- File JavaScript xử lý đóng mở -->
+<script type="module" src="menu.js"></script>
+
+</body>
+</html>

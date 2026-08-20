@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cart - Fashion Store</title>
+
+    <!--  FONT: TENOR SANS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap"
+        rel="stylesheet">
+
+
+    <!--   CART CSS -->
+    <link rel="stylesheet" href="./cart.css">
+</head>
+
+
+<body>
+
+    <main class="cart-container">
+
+
+        <!--  CLOSE BUTTON -->
+
+        <button
+            type="button"
+            class="close-btn"
+            aria-label="Close cart">
+
+            <img
+                src="../../../assets/icons/Close.svg"
+                alt="">
+
+        </button>
+
+
+        <!--   CART TITLE -->
+
+        <h1 class="cart-title">
+            CART
+        </h1>
+
+        <!--  CART ITEMS -->
+
+        <section class="cart-items">
+
+            <!--  PRODUCT 1 -->
+
+            <article class="cart-item">
+
+                <!-- Product Image -->
+                <img
+                    class="item-image"
+                    src="../../../assets/images/category/category_Grid_view_full/category1.png"
+                    alt="Recycle Boucle Knit Cardigan Pink">
+
+
+                <!-- Product Information -->
+                <div class="item-details">
+
+                    <!-- Brand + Description -->
+                    <div class="item-info">
+
+                        <h2 class="item-brand">
+                            LAMEREI
+                        </h2>
+
+                        <p class="item-desc">
+                            Recycle Boucle Knit Cardigan Pink
+                        </p>
+
+                    </div>
+
+
+                    <!-- Quantity -->
+                    <div class="quantity-control">
+
+                        <button
+                            type="button"
+                            class="qty-btn decrease-btn"
+                            aria-label="Decrease quantity">
+                            −
+                        </button>
+
+                        <span class="qty-text">
+                            1
+                        </span>
+
+                        <button
+                            type="button"
+                            class="qty-btn increase-btn"
+                            aria-label="Increase quantity">
+                            +
+                        </button>
+
+                    </div>
+
+
+                    <!-- Price -->
+                    <!-- data-price = giá gốc -->
+                    <span
+                        class="item-price"
+                        data-price="120">
+                        $120
+                    </span>
+
+                </div>
+
+            </article>
+          <!--  PRODUCT 2-->
+
+            <article class="cart-item">
+
+                <!-- Product Image -->
+                <img
+                    class="item-image"
+                    src="../../../assets/images/productDetail/product1.png"
+                    alt="2021 Signature Sweatshirt [NAVY]">
+
+
+                <!-- Product Information -->
+                <div class="item-details">
+
+                    <!-- Brand + Description -->
+                    <div class="item-info">
+
+                        <h2 class="item-brand">
+                            5252 BY O!OI
+                        </h2>
+
+                        <p class="item-desc">
+                            2021 Signature Sweatshirt [NAVY]
+                        </p>
+
+                    </div>
+
+
+                    <!-- Quantity -->
+                    <div class="quantity-control">
+
+                        <button
+                            type="button"
+                            class="qty-btn decrease-btn"
+                            aria-label="Decrease quantity">
+                            −
+                        </button>
+
+                        <span class="qty-text">
+                            1
+                        </span>
+
+                        <button
+                            type="button"
+                            class="qty-btn increase-btn"
+                            aria-label="Increase quantity">
+                            +
+                        </button>
+
+                    </div>
+
+
+                    <!-- Price -->
+                    <!-- data-price = giá gốc -->
+                    <span
+                        class="item-price"
+                        data-price="120">
+                        $120
+                    </span>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!--  CART SUMMARY -->
+
+        <section class="cart-summary">
+
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+
+            <!-- Sub Total -->
+            <div class="subtotal">
+
+                <span class="subtotal-text">
+                    SUB TOTAL
+                </span>
+
+                <span class="subtotal-price">
+                    $240
+                </span>
+
+            </div>
+            <!-- Disclaimer -->
+            <p class="disclaimer">
+                *shipping charges, taxes and discount codes are calculated at the time of accounting.
+            </p>
+        </section>
+      <!--  BUY NOW BUTTON -->
+        <button
+            type="button"
+            class="buy-now-btn">
+            <img
+                src="../../../assets/icons/shopping-bag.svg"
+                alt=""
+                class="buy-now-icon">
+            <span>
+                BUY NOW
+            </span>
+        </button>
+    </main>
+ <!--  CART JAVASCRIPT  -->
+    <script src="./cart.js"></script>
+</body>
+</html>

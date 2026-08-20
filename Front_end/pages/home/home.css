@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&display=swap");
+
+/* Custom Typography */
+body {
+  font-family: 'Tenor Sans', sans-serif;
+  color: #333333;
+}
+
+.font-serif-title {
+  font-family: 'Bodoni Moda', serif;
+}
+
+/* Duong phan cach hinh thoi trang tri */
+.divider-diamond {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.divider-diamond::before,
+.divider-diamond::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #E0E0E0;
+  max-width: 80px;
+}
+
+.divider-diamond span {
+  width: 6px;
+  height: 6px;
+  border: 1px solid #888888;
+  transform: rotate(45deg);
+  margin: 0 10px;
+  background-color: transparent;
+}
+
+/* An thanh cuon cho danh sach san pham ngang */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+}
+
+.home-figma-page {
+  --home-page: #fcfcfc;
+  --home-text: #333333;
+  --home-muted: #555555;
+  --home-accent: #dd8560;
+  --home-content-padding: 16px;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--home-page);
+  color: var(--home-text);
+}
+
+.home-figma-page > section {
+  min-width: 0;
+}
+
+.home-figma-page .text-amber-700 {
+  color: var(--home-accent);
+}
+
+/* Touch- and mouse-friendly horizontal product rail. */
+.just-for-you-carousel-wrap,
+.product-carousel-wrap {
+  position: relative;
+}
+
+.product-carousel {
+  cursor: grab;
+}
+
+.product-carousel.is-dragging {
+  cursor: grabbing;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.hero-carousel > .hero-product-card {
+  flex: 0 0 50%;
+  display: grid;
+  place-items: center;
+  background: #f2f3f4;
+}
+
+.hero-product-card > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-carousel > .hero-feature-slide {
+  flex: 0 0 100%;
+}
+
+.hero-product-card__label {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 12px 10px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
+  color: #ffffff;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.new-arrival-carousel > * {
+  flex: 0 0 calc((100% - 28px) / 2);
+}
+
+.just-for-you-carousel > * {
+  flex: 0 0 calc((100% - 32px) / 2);
+}
+
+.carousel-control {
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 24px);
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d9d9d9;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--home-text);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-control:focus-visible {
+  outline: 2px solid var(--home-accent);
+  outline-offset: 3px;
+}
+
+.carousel-control--previous {
+  left: 8px;
+}
+
+.carousel-control--next {
+  right: 8px;
+}
+
+/* Layout used by HomePage() in pages/home/home.js */
+.home-page {
+  padding: 40px 24px 56px;
+  color: #2a2a2a;
+}
+
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.home-eyebrow {
+  color: #8d8178;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.home-hero h1 {
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(32px, 9vw, 46px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.home-copy {
+  color: #6a625c;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: 6px;
+}
+
+.home-button,
+.home-link {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.home-button {
+  padding: 14px 18px;
+  background: #1f1f1f;
+  color: #ffffff;
+}
+
+.home-link {
+  padding: 14px 0;
+  border-bottom: 1px solid currentColor;
+}
+
+.home-preview {
+  display: grid;
+  gap: 12px;
+  margin-top: 48px;
+}
+
+.home-preview__card {
+  padding: 20px;
+  border: 1px solid #e9e3dc;
+  background: #faf8f6;
+}
+
+.home-preview__card span,
+.home-preview__card strong,
+.home-preview__card p {
+  display: block;
+}
+
+.home-preview__card span {
+  color: #8d8178;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.home-preview__card strong {
+  margin-top: 8px;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.home-preview__card p {
+  margin-top: 8px;
+  color: #6a625c;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (min-width: 521px) {
+  .home-page {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+
+/* Tablet: retain generous spacing and use a three-column product grid. */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .home-figma-page > section:first-child {
+    height: clamp(600px, 78vh, 720px);
+    min-height: 0;
+    background-color: #eef1f3;
+  }
+
+  .hero-carousel > .hero-product-card {
+    flex-basis: calc(100% / 3);
+  }
+
+  .home-figma-page > section:nth-of-type(2),
+  .home-figma-page > section:nth-of-type(4),
+  .home-figma-page > section:nth-of-type(6) {
+    --home-content-padding: clamp(24px, 5vw, 56px);
+    padding-right: var(--home-content-padding);
+    padding-left: var(--home-content-padding);
+  }
+
+  .home-figma-page > section:nth-of-type(2) > .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .new-arrival-carousel > * {
+    flex-basis: calc((100% - 48px) / 3);
+  }
+
+  .home-figma-page > section:nth-of-type(3) {
+    padding-right: clamp(24px, 5vw, 56px);
+    padding-left: clamp(24px, 5vw, 56px);
+  }
+
+  .home-figma-page > section:nth-of-type(5) {
+    padding: 48px clamp(24px, 8vw, 96px);
+  }
+
+  .just-for-you-carousel > * {
+    flex-basis: calc((100% - 48px) / 3);
+  }
+
+  .carousel-control {
+    display: grid;
+    place-items: center;
+  }
+}
+
+/* Desktop: fill the page, cap only readable gutters, and use CSS Grid for galleries. */
+@media (min-width: 1024px) {
+  .home-figma-page > section:first-child {
+    height: clamp(620px, 78vh, 820px);
+    min-height: 0;
+    background-color: #eef1f3;
+  }
+
+  .hero-carousel > .hero-product-card {
+    flex-basis: 25%;
+  }
+
+  .home-figma-page > section:nth-of-type(2),
+  .home-figma-page > section:nth-of-type(4),
+  .home-figma-page > section:nth-of-type(6) {
+    --home-content-padding: clamp(40px, 7vw, 128px);
+    padding-right: var(--home-content-padding);
+    padding-left: var(--home-content-padding);
+  }
+
+  .home-figma-page > section:nth-of-type(2) > .grid,
+  .home-figma-page > section:nth-of-type(6) > .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(20px, 2vw, 36px);
+  }
+
+  .new-arrival-carousel > * {
+    flex-basis: calc((100% - 72px) / 4);
+  }
+
+  .home-figma-page > section:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(24px, 3vw, 48px);
+    padding: 48px clamp(40px, 7vw, 128px);
+    align-items: stretch;
+  }
+
+  .home-figma-page > section:nth-of-type(3) > h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  .home-figma-page > section:nth-of-type(3) > div {
+    margin: 0;
+  }
+
+  .home-figma-page > section:nth-of-type(3) > div:nth-of-type(2) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .home-figma-page > section:nth-of-type(3) > div:nth-of-type(3) {
+    grid-column: 1 / -1;
+  }
+
+  .home-figma-page > section:nth-of-type(5) {
+    padding: 64px clamp(40px, 12vw, 240px);
+  }
+
+  .home-figma-page > section:nth-of-type(5) > div:nth-of-type(3) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(24px, 4vw, 72px);
+  }
+
+  .just-for-you-carousel > * {
+    flex-basis: calc((100% - 72px) / 4);
+  }
+
+  .carousel-control {
+    display: grid;
+    place-items: center;
+  }
+}
