@@ -1,17 +1,17 @@
 export function HomePage() {
     return `
-<<<<<<< HEAD
         <div class="home-figma-page w-full bg-white">
             <!-- Hero Banner Section -->
-            <section class="relative w-full aspect-[3/5] bg-gray-100 flex items-center justify-center text-center overflow-hidden">
-                <img src="./assets/images/homePage/heros/hero-banner.png" alt="Luxury fashion collection" class="absolute inset-0 w-full h-full object-cover object-top">
-                <div class="absolute inset-0 bg-black/10"></div>
-                <div class="relative z-10 flex flex-col items-center px-4 mt-12">
-                    <h1 class="text-[32px] leading-[40px] font-serif-title italic tracking-[2px] uppercase text-gray-800 font-normal">LUXURY<br><span class="not-italic tracking-[3px]">FASHION</span><br>& ACCESSORIES</h1>
-                    <a href="#/blog" class="mt-28 bg-black/50 backdrop-blur-md text-white text-[11px] tracking-[2px] uppercase px-6 py-3 rounded-full hover:bg-black transition">EXPLORE COLLECTION</a>
-                    <!-- Slider Pagination Dots -->
-                    <div class="flex space-x-1.5 mt-6 items-center" aria-hidden="true"><span class="w-1.5 h-1.5 bg-white rotate-45 transform"></span><span class="w-1.5 h-1.5 border border-white/70 rotate-45 transform"></span><span class="w-1.5 h-1.5 border border-white/70 rotate-45 transform"></span></div>
+            <section class="hero-carousel-wrap relative w-full aspect-[3/5] bg-gray-100 text-center overflow-hidden">
+                <div class="hero-carousel product-carousel flex w-full h-full overflow-x-auto no-scrollbar scroll-smooth" aria-label="Featured products">
+                    ${heroBannerSlide()}
+                    ${heroProductCard("homePage/newArrivals/new-arrival-1.png", "21WN reversible angora cardigan")}
+                    ${heroProductCard("homePage/newArrivals/new-arrival-2.png", "Cashmere blend jacket")}
+                    ${heroProductCard("homePage/newArrivals/new-arrival-3.png", "Soft knit cardigan")}
+                    ${heroProductCard("homePage/newArrivals/new-arrival-4.png", "Oblong bag")}
                 </div>
+                <button class="carousel-control carousel-control--previous" type="button" data-carousel-control="previous" aria-label="Show previous featured collection"><span aria-hidden="true">&#8592;</span></button>
+                <button class="carousel-control carousel-control--next" type="button" data-carousel-control="next" aria-label="Show next featured collection"><span aria-hidden="true">&#8594;</span></button>
             </section>
 
             <!-- New Arrivals Section -->
@@ -21,11 +21,19 @@ export function HomePage() {
                 <!-- Category Filter Tabs -->
                 <div class="flex justify-center space-x-4 text-xs text-gray-400 mb-6"><div class="flex flex-col items-center"><span class="text-black font-medium cursor-pointer">All</span><span class="w-1 h-1 bg-amber-700 rotate-45 transform mt-1"></span></div><span>Apparel</span><span>Dress</span><span>Tshirt</span><span>Bag</span></div>
                 <!-- Product Grid -->
-                <div class="grid grid-cols-2 gap-x-3 gap-y-6 text-left">
-                    ${productCard("new-arrival-1.png", "21WN reversible angora cardigan")}
-                    ${productCard("new-arrival-2.png", "21WN reversible angora cardigan")}
-                    ${productCard("new-arrival-3.png", "21WN reversible angora cardigan")}
-                    ${productCard("new-arrival-4.png", "Oblong bag")}
+                <div class="product-carousel-wrap">
+                    <button class="carousel-control carousel-control--previous" type="button" data-carousel-control="previous" aria-label="Show previous new arrivals"><span aria-hidden="true">&#8592;</span></button>
+                    <div class="new-arrival-carousel product-carousel flex overflow-x-auto space-x-3 px-4 pb-4 no-scrollbar scroll-smooth" aria-label="New arrival products">
+                        ${productCard("homePage/newArrivals/new-arrival-1.png", "21WN reversible angora cardigan")}
+                        ${productCard("homePage/newArrivals/new-arrival-2.png", "Cashmere blend jacket")}
+                        ${productCard("homePage/newArrivals/new-arrival-3.png", "Soft knit cardigan")}
+                        ${productCard("homePage/newArrivals/new-arrival-4.png", "Oblong bag")}
+                        ${productCard("productDetail/product1.png", "Classic cotton shirt")}
+                        ${productCard("productDetail/product2.png", "Relaxed tailored blazer")}
+                        ${productCard("productDetail/product3.png", "Pleated midi skirt")}
+                        ${productCard("productDetail/product4.png", "Leather mini bag")}
+                    </div>
+                    <button class="carousel-control carousel-control--next" type="button" data-carousel-control="next" aria-label="Show next new arrivals"><span aria-hidden="true">&#8594;</span></button>
                 </div>
                 <a href="#/blog" class="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-black mt-8"><span>Explore More</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path></svg></a>
                 <div class="divider-diamond mt-8"><span></span></div>
@@ -50,9 +58,23 @@ export function HomePage() {
                 <h2 class="text-base tracking-[4px] uppercase font-serif-title text-black">JUST FOR YOU</h2>
                 <div class="divider-diamond"><span></span></div>
                 <!-- Horizontal Scrollable Product List -->
-                <div class="flex overflow-x-auto space-x-4 px-4 pb-4 no-scrollbar scroll-smooth">
-                    ${recommendationCard("recommendation1.png", "Harris Tweed Three button Jacket")}
-                    ${recommendationCard("recommendation2.png", "Cashmere Blend Cropped Jacket")}
+                <div class="just-for-you-carousel-wrap">
+                    <button class="carousel-control carousel-control--previous" type="button" data-carousel-control="previous" aria-label="Show previous products">
+                        <span aria-hidden="true">&#8592;</span>
+                    </button>
+                    <div id="just-for-you-carousel" class="just-for-you-carousel product-carousel flex overflow-x-auto space-x-4 px-4 pb-4 no-scrollbar scroll-smooth" aria-label="Recommended products">
+                        ${recommendationCard("homePage/justForYou/recommendation1.png", "Harris Tweed Three button Jacket")}
+                        ${recommendationCard("homePage/justForYou/recommendation2.png", "Cashmere Blend Cropped Jacket")}
+                        ${recommendationCard("homePage/newArrivals/new-arrival-3.png", "Soft knit cardigan")}
+                        ${recommendationCard("homePage/newArrivals/new-arrival-4.png", "Classic leather bag")}
+                        ${recommendationCard("productDetail/product5.png", "Essential cotton blouse")}
+                        ${recommendationCard("productDetail/product6.png", "Tailored everyday trousers")}
+                        ${recommendationCard("productDetail/product7.png", "Minimal shoulder bag")}
+                        ${recommendationCard("productDetail/product8.png", "Signature evening dress")}
+                    </div>
+                    <button class="carousel-control carousel-control--next" type="button" data-carousel-control="next" aria-label="Show next products">
+                        <span aria-hidden="true">&#8594;</span>
+                    </button>
                 </div>
                 <div class="flex justify-center space-x-1.5 my-4" aria-hidden="true"><span class="w-1.5 h-1.5 bg-gray-500 rotate-45 transform"></span><span class="w-1.5 h-1.5 border border-gray-400 rotate-45 transform"></span><span class="w-1.5 h-1.5 border border-gray-400 rotate-45 transform"></span></div>
                 <!-- Trending Hashtags -->
@@ -68,10 +90,33 @@ export function HomePage() {
     `;
 }
 
+function heroProductCard(image, alt) {
+    return `
+        <article class="hero-product-card relative h-full overflow-hidden">
+            <img src="./assets/images/${image}" alt="${alt}" class="w-full h-full object-cover">
+            <div class="hero-product-card__label">${alt}</div>
+        </article>
+    `;
+}
+
+function heroBannerSlide() {
+    return `
+        <article class="hero-feature-slide relative h-full overflow-hidden">
+            <img src="./assets/images/homePage/heros/hero-banner.png" alt="Luxury fashion collection" class="absolute inset-0 w-full h-full object-cover object-top">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <div class="relative z-10 flex h-full flex-col items-center justify-center px-4 pt-12">
+                <h1 class="text-[32px] leading-[40px] font-serif-title italic tracking-[2px] uppercase text-gray-800 font-normal">LUXURY<br><span class="not-italic tracking-[3px]">FASHION</span><br>&amp; ACCESSORIES</h1>
+                <a href="#/blog" class="mt-28 bg-black/50 backdrop-blur-md text-white text-[11px] tracking-[2px] uppercase px-6 py-3 rounded-full hover:bg-black transition">EXPLORE COLLECTION</a>
+                <div class="flex space-x-1.5 mt-6 items-center" aria-hidden="true"><span class="w-1.5 h-1.5 bg-white rotate-45 transform"></span><span class="w-1.5 h-1.5 border border-white/70 rotate-45 transform"></span><span class="w-1.5 h-1.5 border border-white/70 rotate-45 transform"></span></div>
+            </div>
+        </article>
+    `;
+}
+
 function productCard(image, name) {
     return `
         <div>
-            <div class="aspect-[3/4] bg-gray-100 overflow-hidden mb-2"><img src="./assets/images/homePage/newArrivals/${image}" alt="${name}" class="w-full h-full object-cover"></div>
+            <div class="aspect-[3/4] bg-gray-100 overflow-hidden mb-2"><img src="./assets/images/${image}" alt="${name}" class="w-full h-full object-cover"></div>
             <p class="text-[11px] text-gray-700 line-clamp-2 leading-tight">${name}</p>
             <p class="text-xs text-amber-700 mt-1 font-semibold">$120</p>
         </div>
@@ -81,43 +126,47 @@ function productCard(image, name) {
 function recommendationCard(image, name) {
     return `
         <div class="flex-none w-[200px] text-left">
-            <div class="aspect-[3/4] bg-gray-100 mb-2"><img src="./assets/images/homePage/justForYou/${image}" alt="${name}" class="w-full h-full object-cover"></div>
+            <div class="aspect-[3/4] bg-gray-100 mb-2"><img src="./assets/images/${image}" alt="${name}" class="w-full h-full object-cover"></div>
             <p class="text-xs text-gray-800 line-clamp-2">${name}</p>
             <p class="text-xs text-amber-700 font-semibold mt-1">$120</p>
         </div>
-=======
-        <section class="home-page">
-            <div class="home-hero">
-                <p class="home-eyebrow">Open Fashion</p>
-                <h1>Editorial stories for the modern wardrobe.</h1>
-                <p class="home-copy">
-                    Explore the latest journal entries, styling notes, and campaign stories
-                    loaded directly from the blog backend.
-                </p>
-                <div class="home-actions">
-                    <a class="home-button" href="#/blog">Open Blog Journal</a>
-                    <a class="home-link" href="#/blog/latest">See Latest Posts</a>
-                </div>
-            </div>
-
-            <section class="home-preview">
-                <div class="home-preview__card">
-                    <span>Live backend integration</span>
-                    <strong>Blog list</strong>
-                    <p>Reads real data from <code>/api/blogs</code> with paging and filtering support.</p>
-                </div>
-                <div class="home-preview__card">
-                    <span>Editorial detail</span>
-                    <strong>Blog detail</strong>
-                    <p>Loads real article content from <code>/api/blogs/:slug</code>.</p>
-                </div>
-                <div class="home-preview__card">
-                    <span>More modules ready</span>
-                    <strong>Popular and related</strong>
-                    <p>Frontend can now consume the latest, popular, and related blog endpoints.</p>
-                </div>
-            </section>
-        </section>
->>>>>>> origin/main
     `;
 }
+
+let activeCarouselDrag = null;
+
+document.addEventListener("click", (event) => {
+    const control = event.target.closest("[data-carousel-control]");
+    if (!control) return;
+
+    const carousel = control.parentElement?.querySelector(".product-carousel");
+    if (!carousel) return;
+
+    const direction = control.dataset.carouselControl === "next" ? 1 : -1;
+    carousel.scrollBy({ left: direction * carousel.clientWidth * 0.8, behavior: "smooth" });
+});
+
+document.addEventListener("pointerdown", (event) => {
+    const carousel = event.target.closest(".product-carousel");
+    if (!carousel || event.button !== 0) return;
+
+    activeCarouselDrag = { carousel, pointerId: event.pointerId, startX: event.clientX, startScrollLeft: carousel.scrollLeft };
+    carousel.setPointerCapture(event.pointerId);
+    carousel.classList.add("is-dragging");
+});
+
+document.addEventListener("pointermove", (event) => {
+    if (!activeCarouselDrag || activeCarouselDrag.pointerId !== event.pointerId) return;
+
+    activeCarouselDrag.carousel.scrollLeft = activeCarouselDrag.startScrollLeft - (event.clientX - activeCarouselDrag.startX);
+});
+
+function stopCarouselDrag(event) {
+    if (!activeCarouselDrag || activeCarouselDrag.pointerId !== event.pointerId) return;
+
+    activeCarouselDrag.carousel.classList.remove("is-dragging");
+    activeCarouselDrag = null;
+}
+
+document.addEventListener("pointerup", stopCarouselDrag);
+document.addEventListener("pointercancel", stopCarouselDrag);
