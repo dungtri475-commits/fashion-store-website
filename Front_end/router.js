@@ -4,16 +4,13 @@
  * Dieu huong trang se phat trien sau tai day
  */
 import {HomePage} from "./pages/home/home.js";
-import {
-    renderBlogDetailPage,
-    renderBlogListPage
-} from "./pages/blog/blog.js";
+import { handleBlogRoute } from "./pages/blogs/blog.router.js";
 
 function getAppContainer() {
     return document.getElementById("app");
 }
 
-export function goToHome(){
+export function renderHome(){
     const app = getAppContainer();
     if (!app) return;
 
@@ -21,7 +18,7 @@ export function goToHome(){
 }
 
 export function initRouter(){
-    const renderRoute = async () => {
+    const renderRoute = () => {
         const app = getAppContainer();
 
         if (!app) {
@@ -29,39 +26,29 @@ export function initRouter(){
         }
 
         const hash = window.location.hash || "#/home";
-        const blogDetailMatch = hash.match(/^#\/blog\/([^/?#]+)$/);
+        const routeParts = hash
+            .replace(/^#?\//, "")
+            .split("/")
+            .filter(Boolean);
+        const [moduleName = "home", ...childRoutes] = routeParts;
 
-        switch (hash) {
-            case "#/home":
-                goToHome();
+        switch (moduleName) {
+            case "home":
+                renderHome();
                 break;    
-            case "#/blog":
-                await renderBlogListPage(app, "all");
-                break;
-            case "#/blog/latest":
-                await renderBlogListPage(app, "latest");
-                break;
-            case "#/blog/popular":
-                await renderBlogListPage(app, "popular");
+            case "blog":
+                handleBlogRoute(childRoutes);
                 break;
             default:
-                if (blogDetailMatch) {
-                    await renderBlogDetailPage(app, decodeURIComponent(blogDetailMatch[1]));
-                    break;
-                }
-
-                goToHome();
+                console.warn("Route không tồn tại:", hash);
+                window.location.hash = "#/home";
                 break;
         }
     };
 
     window.addEventListener("hashchange", () => {
-        renderRoute().catch((error) => {
-            console.error(error);
-        });
+        renderRoute();
     });
 
-    renderRoute().catch((error) => {
-        console.error(error);
-    });
+    renderRoute();
 }
