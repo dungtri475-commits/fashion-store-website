@@ -6,6 +6,7 @@
 import {HomePage} from "./pages/home/home.js";
 import { handleBlogRoute } from "./pages/blogs/blog.router.js";
 import { handleMenuRoute } from "./pages/menu/menu.router.js";
+import { handleCategoryRoute } from "./pages/categori/categori.router.js";
 
 function getAppContainer() {
     return document.getElementById("app");
@@ -42,6 +43,10 @@ export function initRouter(){
                 break;
             case "menu":
                 handleMenuRoute(childRoutes);
+                break;
+            case "category":
+            case "categori":
+                handleCategoryRoute(childRoutes);
                 break;
             default:
                 console.warn("Route không tồn tại:", hash);
