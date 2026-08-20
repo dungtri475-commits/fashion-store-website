@@ -47,8 +47,9 @@ body {
 }
 
 .home-figma-page {
-  max-width: 375px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   overflow: hidden;
 }
 
@@ -155,4 +156,28 @@ body {
   .home-page {
     padding-inline: 32px;
   }
+}
+
+/* Responsive layout: mobile < 768px, iPad 768-1199px, desktop >= 1200px. */
+.home-figma-page { width: 100%; max-width: none; margin: 0; background: #fcfcfc; }
+.home-figma-page > section:not(:first-child) { width: 100%; max-width: 1280px; margin-inline: auto; }
+.home-figma-page > section:first-child { height: 600px; aspect-ratio: auto; }
+.home-figma-page > section:first-child > img { height: 100%; object-fit: cover; object-position: center 35%; }
+.home-figma-page > section:nth-child(2) > .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 13px; }
+.home-figma-page > section:nth-child(2) > .grid > div { min-width: 0; }
+
+@media (min-width: 768px) {
+  .home-figma-page > section:not(:first-child) { padding-inline: 24px; }
+  .home-figma-page > section:first-child { height: 680px; }
+  .home-figma-page > section:nth-child(2) > .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 20px; }
+  .home-figma-page > section:nth-child(3) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .home-figma-page > section:nth-child(3) > h2, .home-figma-page > section:nth-child(3) > div:last-child { grid-column: 1 / -1; }
+  .home-figma-page > section:nth-child(6) > div { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+}
+
+@media (min-width: 1200px) {
+  .home-figma-page > section:not(:first-child) { padding-inline: 32px; }
+  .home-figma-page > section:first-child { height: min(780px, 85vh); }
+  .home-figma-page > section:nth-child(2) > .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 24px; }
+  .home-figma-page > section:nth-child(3) { gap: 32px; }
 }
