@@ -13,10 +13,9 @@ export function Header() {
        </div>
 
        <div class = "header_center">
-         <h1 class = "header_logo">
+         <a href="${homeUrl}" class="header_logo" aria-label="Go to home page">
               Open Fashion
          </a>
-
        </div>
        
        <div class = "header_right">
