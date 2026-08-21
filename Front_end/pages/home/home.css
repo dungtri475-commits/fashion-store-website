@@ -43,13 +43,11 @@ body {
 
 .no-scrollbar {
   -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 .home-figma-page {
-  width: 100%;
-  max-width: none;
-  margin: 0;
+  max-width: 375px;
+  margin: 0 auto;
   overflow: hidden;
 }
 
@@ -154,7 +152,131 @@ body {
 
 @media (min-width: 521px) {
   .home-page {
-    padding-inline: 32px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+
+/* Tablet: retain generous spacing and use a three-column product grid. */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .home-figma-page > section:first-child {
+    height: clamp(600px, 78vh, 720px);
+    min-height: 0;
+    background-color: #eef1f3;
+  }
+
+  .hero-carousel > .hero-product-card {
+    flex-basis: calc(100% / 3);
+  }
+
+  .home-figma-page > section:nth-of-type(2),
+  .home-figma-page > section:nth-of-type(4),
+  .home-figma-page > section:nth-of-type(6) {
+    --home-content-padding: clamp(24px, 5vw, 56px);
+    padding-right: var(--home-content-padding);
+    padding-left: var(--home-content-padding);
+  }
+
+  .home-figma-page > section:nth-of-type(2) > .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .new-arrival-carousel > * {
+    flex-basis: calc((100% - 48px) / 3);
+  }
+
+  .home-figma-page > section:nth-of-type(3) {
+    padding-right: clamp(24px, 5vw, 56px);
+    padding-left: clamp(24px, 5vw, 56px);
+  }
+
+  .home-figma-page > section:nth-of-type(5) {
+    padding: 48px clamp(24px, 8vw, 96px);
+  }
+
+  .just-for-you-carousel > * {
+    flex-basis: calc((100% - 48px) / 3);
+  }
+
+  .carousel-control {
+    display: grid;
+    place-items: center;
+  }
+}
+
+/* Desktop: fill the page, cap only readable gutters, and use CSS Grid for galleries. */
+@media (min-width: 1024px) {
+  .home-figma-page > section:first-child {
+    height: clamp(620px, 78vh, 820px);
+    min-height: 0;
+    background-color: #eef1f3;
+  }
+
+  .hero-carousel > .hero-product-card {
+    flex-basis: 25%;
+  }
+
+  .home-figma-page > section:nth-of-type(2),
+  .home-figma-page > section:nth-of-type(4),
+  .home-figma-page > section:nth-of-type(6) {
+    --home-content-padding: clamp(40px, 7vw, 128px);
+    padding-right: var(--home-content-padding);
+    padding-left: var(--home-content-padding);
+  }
+
+  .home-figma-page > section:nth-of-type(2) > .grid,
+  .home-figma-page > section:nth-of-type(6) > .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(20px, 2vw, 36px);
+  }
+
+  .new-arrival-carousel > * {
+    flex-basis: calc((100% - 72px) / 4);
+  }
+
+  .home-figma-page > section:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(24px, 3vw, 48px);
+    padding: 48px clamp(40px, 7vw, 128px);
+    align-items: stretch;
+  }
+
+  .home-figma-page > section:nth-of-type(3) > h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  .home-figma-page > section:nth-of-type(3) > div {
+    margin: 0;
+  }
+
+  .home-figma-page > section:nth-of-type(3) > div:nth-of-type(2) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .home-figma-page > section:nth-of-type(3) > div:nth-of-type(3) {
+    grid-column: 1 / -1;
+  }
+
+  .home-figma-page > section:nth-of-type(5) {
+    padding: 64px clamp(40px, 12vw, 240px);
+  }
+
+  .home-figma-page > section:nth-of-type(5) > div:nth-of-type(3) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(24px, 4vw, 72px);
+  }
+
+  .just-for-you-carousel > * {
+    flex-basis: calc((100% - 72px) / 4);
+  }
+
+  .carousel-control {
+    display: grid;
+    place-items: center;
   }
 }
 

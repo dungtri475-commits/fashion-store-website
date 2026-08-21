@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Detail | Open Fashion</title>
+  <base href="../../">
+  <link rel="stylesheet" href="components/common/common.css">
+  <link rel="stylesheet" href="components/layout/header/header.css">
+  <link rel="stylesheet" href="components/layout/footer/footer.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="pages/product/product.css">
+</head>
+<body>
+  <div class="product-page product-detail">
+    <div id="header-component"></div>
+    <main class="product-main">
+      <button class="product-back" type="button" aria-label="Return to product listing">← <span>Back to products</span></button>
+      <div class="product-layout">
+        <section class="product-gallery" aria-label="Product gallery">
+          <div class="main-media">
+            <img id="main-product-image" src="assets/images/category/category_Grid_view/category1.png" alt="Recycle Boucle Knit Cardigan">
+            <button class="zoom" type="button" aria-label="View product image full screen">↗</button>
+          </div>
+          <div class="diamonds" aria-label="Image gallery"><i class="diamond active"></i><i class="diamond"></i><i class="diamond"></i></div>
+          <div class="thumbs" aria-label="Choose product image">
+            <button class="thumb active" type="button" data-image="assets/images/category/category_Grid_view/category1.png" aria-label="View product image 1"><img src="assets/images/category/category_Grid_view/category1.png" alt=""></button>
+            <button class="thumb" type="button" data-image="assets/images/category/category_Grid_view/category2.png" aria-label="View product image 2"><img src="assets/images/category/category_Grid_view/category2.png" alt=""></button>
+            <button class="thumb" type="button" data-image="assets/images/category/category_Grid_view/category3.png" aria-label="View product image 3"><img src="assets/images/category/category_Grid_view/category3.png" alt=""></button>
+          </div>
+        </section>
+
+        <section class="product-summary" aria-labelledby="product-title">
+          <div class="summary-row"><div><p class="brand" id="product-brand">MOHAN</p><h1 class="product-name" id="product-title">Recycle Boucle Knit Cardigan Pink</h1><p class="price">$120</p></div><button class="share-button" type="button" aria-label="Share product">↗</button></div>
+          <div class="variation">
+            <div class="option-group"><span>Color</span><button class="swatch active" type="button" style="--swatch:#1b1b1b" aria-label="Black"></button><button class="swatch" type="button" style="--swatch:#b46b4a" aria-label="Rust"></button><button class="swatch" type="button" style="--swatch:#dedede" aria-label="Grey"></button></div>
+            <div class="option-group"><span>Size</span><button class="size active" type="button">S</button><button class="size" type="button">M</button><button class="size" type="button">L</button></div>
+          </div>
+          <button class="add-to-cart" type="button"><span>＋ Add to cart</span><span>$120</span></button>
+          <button class="wishlist" type="button" aria-pressed="false">♡ Add to wishlist</button>
+        </section>
+      </div>
+
+      <section class="product-copy">
+        <h2>Materials</h2>
+        <p>We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.</p>
+        <h2>Care</h2>
+        <p>To keep your jackets and coats clean, freshen them with a cloth or clothes brush. When dry cleaning is needed, choose technologies respectful of the environment.</p>
+        <ul class="care-list"><li><span>△</span>Do not use bleach</li><li><span>□</span>Do not tumble dry</li><li><span>♢</span>Dry clean with tetrachloroethylene</li><li><span>⌂</span>Iron at a maximum of 110°C/230°F</li></ul>
+        <details class="policy" open><summary>Free Flat Rate Shipping</summary><p>Estimated delivery: 09/11/2021 – 12/11/2021.</p></details>
+        <details class="policy"><summary>COD Policy</summary><p>Cash on delivery is available.</p></details>
+        <details class="policy"><summary>Return Policy</summary><p>Free returns within 14 days.</p></details>
+      </section>
+
+      <section class="related" aria-labelledby="related-heading">
+        <h2 id="related-heading">You may also like</h2>
+        <div class="product-grid">
+          <article class="card"><img src="assets/images/category/category_Grid_view/category2.png" alt="Cashmere Blend Jacket"><p>Cashmere Blend Jacket</p><span>$120</span></article>
+          <article class="card"><img src="assets/images/category/category_Grid_view/category3.png" alt="Soft Knit Cardigan"><p>Soft Knit Cardigan</p><span>$120</span></article>
+          <article class="card"><img src="assets/images/category/category_Grid_view/category4.png" alt="Oblong Leather Bag"><p>Oblong Leather Bag</p><span>$120</span></article>
+          <article class="card"><img src="assets/images/category/category_Grid_view/category1.png" alt="Reversible Angora Cardigan"><p>Reversible Angora Cardigan</p><span>$120</span></article>
+        </div>
+      </section>
+    </main>
+    <div id="footer-component"></div>
+    <div class="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script type="module" src="pages/product/product.js"></script>
+</body>
+</html>

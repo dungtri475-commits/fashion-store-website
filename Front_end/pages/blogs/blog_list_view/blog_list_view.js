@@ -1,7 +1,7 @@
 import { initBlogLayoutNavigator, initBlogNavigator } from "../blog.router.js";
 import { navigateToBlogPost } from "../blog_post/blog_post_router.js";
 
-const LIST_POST_IDS = [5, 6, 7, 8, 4, 9];
+const LIST_POST_IDS = [5, 6, 7, 8, 4, 9, 1, 2];
 
 const moreListPosts = [
     {

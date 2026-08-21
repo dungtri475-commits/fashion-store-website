@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Fashion | Ring Gallery</title>
+    <base href="../../">
+    <link rel="stylesheet" href="common/reset.css">
+    <link rel="stylesheet" href="common/global.css">
+    <link rel="stylesheet" href="components/layout/header/header.css">
+    <link rel="stylesheet" href="components/layout/footer/footer.css">
+    <link rel="stylesheet" href="pages/product/product.css">
+</head>
+<body>
+    <div class="product-page product-detail-layout">
+        <div id="header-component"></div>
+
+        <main class="product-main">
+            <button class="product-back" type="button" aria-label="Back to product listing">← Back to products</button>
+
+            <div class="product-layout">
+                <section class="product-gallery" aria-label="Product images">
+                    <div class="main-media">
+                        <img id="main-product-image" src="assets/images/category/category_Grid_view/category1.png" alt="Gold stacking rings">
+                        <button class="zoom" type="button" aria-label="View product image larger">↗</button>
+                    </div>
+
+                    <div class="thumbs" aria-label="Choose a product image">
+                        <button class="thumb active" type="button" data-image="assets/images/category/category_Grid_view/category1.png" aria-label="View gold stacking rings">
+                            <img src="assets/images/category/category_Grid_view/category1.png" alt="">
+                        </button>
+                        <button class="thumb" type="button" data-image="assets/images/category/category_Grid_view/category2.png" aria-label="View ring detail">
+                            <img src="assets/images/category/category_Grid_view/category2.png" alt="">
+                        </button>
+                        <button class="thumb" type="button" data-image="assets/images/category/category_Grid_view/category3.png" aria-label="View ring from the side">
+                            <img src="assets/images/category/category_Grid_view/category3.png" alt="">
+                        </button>
+                    </div>
+                </section>
+
+                <section class="product-summary" aria-labelledby="product-title">
+                    <div class="summary-row">
+                        <div>
+                            <p class="brand" id="product-brand">MOHAN</p>
+                            <h1 class="product-name" id="product-title">Gold stacking ring set</h1>
+                            <p class="price">$120</p>
+                        </div>
+                        <button class="share-button" type="button" aria-label="Share this product">↗</button>
+                    </div>
+
+                    <div class="product-options">
+                        <span class="option-label">Ring Size</span>
+                        <div class="size-options" role="group" aria-label="Ring size">
+                            <button class="size active" type="button">6</button>
+                            <button class="size" type="button">7</button>
+                            <button class="size" type="button">8</button>
+                            <button class="size" type="button">9</button>
+                            <button class="size" type="button">10</button>
+                            <button class="size" type="button">11</button>
+                        </div>
+                        <div class="swatch-options" aria-label="Gold finish">
+                            <button class="swatch active" type="button" aria-label="Gold finish"></button>
+                        </div>
+                    </div>
+
+                    <div class="purchase-actions">
+                        <button class="add-to-cart" type="button">＋ Add to cart</button>
+                        <button class="wishlist" type="button" aria-label="Add to wishlist" aria-pressed="false">♡</button>
+                    </div>
+                </section>
+            </div>
+
+            <section class="gallery-section" aria-labelledby="gallery-heading">
+                <h2 id="gallery-heading">Gallery</h2>
+                <div class="gallery-grid">
+                    <img src="assets/images/category/category_Grid_view/category4.png" alt="Model wearing a delicate ring">
+                    <img src="assets/images/category/category_Grid_view/category5.png" alt="Close-up of rings worn on a hand">
+                    <img src="assets/images/category/category_Grid_view/category6.png" alt="Ring detail in natural light">
+                </div>
+            </section>
+
+            <section class="product-copy policy-list" aria-labelledby="care-heading">
+                <h2 id="care-heading">Care</h2>
+                <details open>
+                    <summary>Free Flat Rate Shipping</summary>
+                    <p>Estimated to be delivered on 09/11/2021 - 12/11/2021.</p>
+                </details>
+                <details>
+                    <summary>COD Policy</summary>
+                    <p>Cash on delivery is available for eligible orders.</p>
+                </details>
+                <details>
+                    <summary>Return Policy</summary>
+                    <p>Return unworn products within 30 days of delivery.</p>
+                </details>
+            </section>
+
+            <section class="related-products" aria-labelledby="related-heading">
+                <h2 id="related-heading">You may also like</h2>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <img src="assets/images/category/category_Grid_view/category1.png" alt="Gold stacking rings">
+                        <p>21WN</p><span>Gold stacking rings</span><strong>$120</strong>
+                    </article>
+                    <article class="related-card">
+                        <img src="assets/images/category/category_Grid_view/category2.png" alt="Crystal ring">
+                        <p>21WN</p><span>Crystal solitaire ring</span><strong>$120</strong>
+                    </article>
+                    <article class="related-card">
+                        <img src="assets/images/category/category_Grid_view/category3.png" alt="Minimal gold ring">
+                        <p>21WN</p><span>Minimal gold ring</span><strong>$120</strong>
+                    </article>
+                    <article class="related-card">
+                        <img src="assets/images/category/category_Grid_view/category4.png" alt="Blue gemstone ring">
+                        <p>21WN</p><span>Blue gemstone ring</span><strong>$120</strong>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <div id="footer-component"></div>
+        <div class="toast" role="status" aria-live="polite"></div>
+    </div>
+
+    <script type="module" src="pages/product/product.js"></script>
+</body>
+</html>
