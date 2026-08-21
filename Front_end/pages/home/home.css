@@ -249,6 +249,7 @@ body {
   place-content: center;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .collection-card::after {
@@ -273,6 +274,7 @@ body {
 
 .collection-card span { font: italic 32px 'Bodoni Moda', serif; }
 .collection-card small { letter-spacing: .25em; }
+.collection-card:focus-visible { outline: 3px solid #dd8560; outline-offset: -3px; }
 
 .home-figma-page {
   max-width: 375px;

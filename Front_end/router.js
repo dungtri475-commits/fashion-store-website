@@ -8,6 +8,7 @@ import { handleBlogRoute } from "./pages/blogs/blog.router.js";
 import { handleMenuRoute } from "./pages/menu/menu.router.js";
 import { handleCategoryRoute } from "./pages/categori/categori.router.js";
 import { handleProductRoute } from "./pages/product/product.router.js";
+import { handleCollectionRoute } from "./pages/collection/collection.router.js";
 
 function getAppContainer() {
     return document.getElementById("app");
@@ -51,6 +52,9 @@ export function initRouter(){
                 break;
             case "product":
                 handleProductRoute(childRoutes);
+                break;
+            case "collection":
+                handleCollectionRoute(childRoutes);
                 break;
             default:
                 console.warn("Route không tồn tại:", hash);
