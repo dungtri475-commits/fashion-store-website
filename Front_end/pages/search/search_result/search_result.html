@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search results | Open Fashion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./search_result.css">
+</head>
+<body>
+    <main class="results-page">
+        <a class="back-link" href="../searching/search.html" aria-label="Quay lại tìm kiếm">←</a>
+        <h1>SEARCH RESULTS</h1>
+
+        <form class="search-form" role="search">
+            <input id="result-search-input" type="search" placeholder="Search items" autocomplete="off">
+            <button type="submit" aria-label="Tìm kiếm">SEARCH</button>
+        </form>
+
+        <p class="result-summary" aria-live="polite"></p>
+        <section class="product-grid" aria-live="polite"></section>
+    </main>
+
+    <script type="module" src="./search_result.js"></script>
+</body>
+</html>
