@@ -20,6 +20,7 @@ const HERO_SLIDES = [
 ];
 
 export function HomePage() {
+    collectionCard.nextDetailId = 1;
     return `
         <div class="home-figma-page w-full bg-white">
             <!-- Hero Banner Section -->
@@ -76,7 +77,6 @@ export function HomePage() {
                     <div class="collection-carousel product-carousel" aria-label="Collections">
                         ${collectionCard("homePage/collections/collection1.png", "October Collection", "October")}
                         ${collectionCard("homePage/collections/collection2.png", "Autumn Collection", "Autumn")}
-                        ${collectionCard("homePage/videos/Video.png", "Seasonal Collection", "Seasonal")}
                         ${collectionCard("category/category_Grid_view_full/category1.png", "Neutral edit", "Neutral Edit")}
                         ${collectionCard("category/category_Grid_view_full/category2.png", "Modern tailoring", "Modern Tailoring")}
                         ${collectionCard("category/category_Grid_view_full/category3.png", "Soft layers", "Soft Layers")}
@@ -86,6 +86,10 @@ export function HomePage() {
                         ${collectionCard("productDetail/product5.png", "New season", "New Season")}
                         ${collectionCard("productDetail/product9.png", "Statement looks", "Statement Looks")}
                         ${collectionCard("productDetail/product12.png", "The accessories edit", "Accessories")}
+                        ${collectionCard("blogGridView/Blog1.png", "The portrait edit", "Portrait Edit")}
+                        ${collectionCard("blogGridView/Blog2.png", "Soft contrast", "Soft Contrast")}
+                        ${collectionCard("blogGridView/Blog3.png", "Daily objects", "Daily Objects")}
+                        ${collectionCard("blogGridView/Blog4.png", "Studio notes", "Studio Notes")}
                     </div>
                     <button class="carousel-control carousel-control--next" type="button" data-carousel-control="next" aria-label="Show next collection"><span aria-hidden="true">&#8594;</span></button>
                 </div>
@@ -135,7 +139,7 @@ function heroBannerSlide(image, alt, title, subtitle) {
             <div class="absolute inset-0 bg-black/10"></div>
             <div class="hero-feature-slide__content relative z-10 flex h-full flex-col items-center justify-center px-4 pt-12">
                 <h1 class="text-[32px] leading-[40px] font-serif-title italic tracking-[2px] uppercase text-gray-800 font-normal">${title}<br><span class="not-italic tracking-[3px]">${subtitle}</span></h1>
-                <a href="./pages/collection/collection_detail/collection_detail.html" class="mt-36 bg-black/50 backdrop-blur-md text-white text-[11px] tracking-[2px] uppercase px-6 py-3 rounded-full hover:bg-black transition">EXPLORE COLLECTION</a>
+                <a href="#/collection/october" class="mt-36 bg-black/50 backdrop-blur-md text-white text-[11px] tracking-[2px] uppercase px-6 py-3 rounded-full hover:bg-black transition">EXPLORE COLLECTION</a>
             </div>
         </article>
     `;
@@ -153,13 +157,17 @@ function productCard(image, name, category) {
 }
 
 function collectionCard(image, alt, title) {
+    const detailId = collectionCard.nextDetailId++;
+    const collectionUrl = `#/collection/detail/${detailId}`;
     return `
-        <a class="collection-card" href="./pages/collection/collection_detail/collection_detail.html">
+        <a class="collection-card" data-collection-route="detail-${detailId}" href="${collectionUrl}" aria-label="Open ${title} Collection">
             <img src="./assets/images/${image}" alt="${alt}">
             <span>${title}</span><small>COLLECTION</small>
         </a>
     `;
 }
+
+collectionCard.nextDetailId = 1;
 
 function recommendationCard(image, name) {
     return `
