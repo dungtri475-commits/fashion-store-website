@@ -361,8 +361,6 @@ body {
     display: flex;
     gap: 12px;
     overflow-x: auto;
-    
-    scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
