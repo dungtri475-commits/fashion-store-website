@@ -1,9 +1,10 @@
-import { icon, button } from "../../common/common.js";
+import { icon } from "../../common/common.js";
 
 export function Header() {
     const menuUrl = new URL("../../../pages/menu/menu.html", import.meta.url).href;
     const homeUrl = new URL("../../../fashion_store.html#/home", import.meta.url).href;
     const searchUrl = new URL("../../../fashion_store.html#/search", import.meta.url).href;
+    const cartUrl = new URL("../../../pages/cart/cart_payment/cart_payment.html", import.meta.url).href;
     
     return `
       <header class="header">
@@ -24,7 +25,9 @@ export function Header() {
            <a href="${searchUrl}" class="btn header_icon-btn" aria-label="Search products">
              ${icon("search")}
            </a>
-           ${button(icon("shopping-bag"), "header_icon-btn")}
+           <a href="${cartUrl}" class="btn header_icon-btn" aria-label="Open shopping bag">
+             ${icon("shopping-bag")}
+           </a>
        </div>
 
     </header>
