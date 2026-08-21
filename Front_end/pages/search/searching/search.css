@@ -1,0 +1,14 @@
+:root { font-family: "Tenor Sans", sans-serif; color: #222; background: #fff; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: #fff; }
+.search-page { width: min(100%, 680px); min-height: 100vh; margin: 0 auto; padding: 48px 24px; }
+.back-button { border: 0; background: transparent; padding: 0; font-size: 28px; cursor: pointer; color: #222; }
+h1 { margin: 56px 0 42px; font-size: 28px; font-weight: 400; letter-spacing: .28em; }
+.search-form { display: grid; gap: 18px; }
+.search-form label { font-size: 13px; letter-spacing: .08em; }
+.search-field { display: flex; align-items: center; border-bottom: 1px solid #222; }
+.search-field input { min-width: 0; flex: 1; padding: 14px 0; border: 0; outline: 0; font: inherit; font-size: 16px; }
+.clear-button { border: 0; background: transparent; padding: 8px; font-size: 24px; cursor: pointer; }
+.search-button { border: 0; padding: 15px; background: #111; color: #fff; font: inherit; letter-spacing: .18em; cursor: pointer; }
+.search-hint { margin-top: 28px; color: #777; line-height: 1.6; }
+@media (min-width: 768px) { .search-page { padding-top: 72px; } }

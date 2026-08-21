@@ -1,0 +1,18 @@
+:root { font-family: "Tenor Sans", sans-serif; color: #222; background: #fff; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: #fff; }
+.results-page { width: min(100%, 1100px); min-height: 100vh; margin: 0 auto; padding: 48px 24px 80px; }
+.back-link { color: #222; font-size: 28px; text-decoration: none; }
+h1 { margin: 42px 0 28px; font-size: 28px; font-weight: 400; letter-spacing: .2em; }
+.search-form { display: flex; border-bottom: 1px solid #222; }
+.search-form input { flex: 1; min-width: 0; padding: 14px 0; border: 0; outline: 0; font: inherit; font-size: 16px; }
+.search-form button { border: 0; background: transparent; padding: 0 0 0 18px; font: inherit; font-size: 12px; letter-spacing: .12em; cursor: pointer; }
+.result-summary { margin: 30px 0 22px; font-size: 13px; letter-spacing: .08em; }
+.product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }
+.product-link { display: grid; width: 100%; gap: 8px; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+.product-link img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; background: #f5f5f5; }
+.product-brand { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.product-name { color: #666; font-size: 13px; line-height: 1.4; }
+.product-link strong { font-weight: 400; }
+.empty-state { grid-column: 1 / -1; color: #777; }
+@media (min-width: 768px) { .results-page { padding: 72px 48px; } .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px 24px; } }
