@@ -5,6 +5,7 @@
 @import url("../components/layout/footer/footer.css");
 /* Pages */
 @import url("../pages/home/home.css");
+@import url("../pages/collection/collection.css");
 
 body {
     margin: 0;
