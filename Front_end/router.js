@@ -66,7 +66,7 @@ export function initRouter(){
                 break;
             default:
                 console.warn("Route không tồn tại:", hash);
-                window.location.hash = "#/home";
+                window.location.assign(new URL("./pages/content/404_page/404_page.html", import.meta.url).href);
                 break;
         }
     };
