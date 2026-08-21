@@ -4,6 +4,7 @@ const CATEGORY_GRID_URL = new URL("../categori/categori_grid_view/categori_grid_
 
 export function navigateToProduct(product = {}) {
     const url = new URL(PRODUCT_ENTRY_URL);
+    if (product.id) url.searchParams.set("id", product.id);
     if (product.name) url.searchParams.set("product", product.name);
     if (product.image) url.searchParams.set("image", product.image);
     window.location.assign(url.href);
