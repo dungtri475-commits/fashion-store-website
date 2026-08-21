@@ -1,0 +1,17 @@
+.collection-page { width: min(100%, 1100px); margin: 0 auto; padding: 28px 16px 56px; background: #FFFFFF; color: #111; }
+.collection-page__heading { position: relative; display: grid; min-height: 150px; place-items: center; overflow: hidden; text-align: center; }
+.collection-page__heading > span { position: absolute; font: 700 clamp(120px, 22vw, 230px) / 1 "Bodoni Moda", serif; color: rgb(17 17 17 / 8%); }
+.collection-page__heading div { position: relative; z-index: 1; }
+.collection-page__heading h1 { margin: 0; font: italic 700 clamp(38px, 7vw, 70px) / 1 "Bodoni Moda", serif; }
+.collection-page__heading p { margin: 8px 0 0; font-size: 11px; letter-spacing: .55em; }
+.collection-page__hero { max-width: 720px; margin: 0 auto 18px; }
+.collection-page__hero img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.collection-page__products { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; max-width: 720px; margin: 0 auto; }
+.collection-product-card { display: block; min-width: 0; padding-bottom: 10px; background: #fafafa; color: #111; text-decoration: none; }
+.collection-product-card img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.collection-product-card span, .collection-product-card small, .collection-product-card strong { display: block; padding: 0 9px; }
+.collection-product-card span { margin-top: 8px; font-size: 13px; }
+.collection-product-card small { margin-top: 3px; color: #777; font-size: 10px; }
+.collection-product-card strong { margin-top: 4px; color: #dd8560; font-size: 13px; font-weight: 400; }
+.collection-product-card:focus-visible { outline: 3px solid #dd8560; outline-offset: 3px; }
+@media (min-width: 768px) { .collection-page { padding: 48px; } .collection-page__products { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; } }
