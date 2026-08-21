@@ -1,12 +1,34 @@
+const HERO_SLIDES = [
+    ["homePage/heros/hero-banner.png", "Luxury fashion collection", "LUXURY", "FASHION & ACCESSORIES"],
+    ["homePage/newArrivals/new-arrival-1.png", "New knitwear collection", "NEW", "KNITWEAR"],
+    ["homePage/newArrivals/new-arrival-4.png", "New bags collection", "SIGNATURE", "BAGS"],
+    ["category/category_Grid_view_full/category1.png", "Neutral edit", "NEUTRAL", "EDIT"],
+    ["category/category_Grid_view_full/category2.png", "Modern tailoring", "MODERN", "TAILORING"],
+    ["category/category_Grid_view_full/category3.png", "Soft layers", "SOFT", "LAYERS"],
+    ["category/category_Grid_view_full/category4.png", "After hours", "AFTER", "HOURS"],
+    ["category/category_Grid_view_full/category5.png", "Weekend edit", "WEEKEND", "EDIT"],
+    ["productDetail/product1.png", "Essential pieces", "ESSENTIAL", "PIECES"],
+    ["productDetail/product2.png", "Tailored pieces", "TAILORED", "PIECES"],
+    ["productDetail/product3.png", "New silhouettes", "NEW", "SILHOUETTES"],
+    ["productDetail/product4.png", "Leather edit", "LEATHER", "EDIT"],
+    ["productDetail/product5.png", "Seasonal favourites", "SEASONAL", "FAVOURITES"],
+    ["productDetail/product6.png", "Everyday tailoring", "EVERYDAY", "TAILORING"],
+    ["productDetail/product7.png", "Minimal style", "MINIMAL", "STYLE"],
+    ["productDetail/product8.png", "Evening edit", "EVENING", "EDIT"],
+    ["productDetail/product9.png", "Statement looks", "STATEMENT", "LOOKS"],
+    ["productDetail/product10.png", "New essentials", "NEW", "ESSENTIALS"]
+];
+
 export function HomePage() {
     return `
         <div class="home-figma-page w-full bg-white">
             <!-- Hero Banner Section -->
             <section class="hero-carousel-wrap relative w-full aspect-[3/5] bg-gray-100 text-center overflow-hidden">
                 <div class="hero-carousel product-carousel flex w-full h-full overflow-x-auto no-scrollbar scroll-smooth" aria-label="Featured products">
-                    ${heroBannerSlide("homePage/heros/hero-banner.png", "Luxury fashion collection", "LUXURY", "FASHION & ACCESSORIES")}
-                    ${heroBannerSlide("homePage/newArrivals/new-arrival-1.png", "New knitwear collection", "NEW", "KNITWEAR")}
-                    ${heroBannerSlide("homePage/newArrivals/new-arrival-4.png", "New bags collection", "SIGNATURE", "BAGS")}
+                    ${HERO_SLIDES.map(([image, alt, title, subtitle]) => heroBannerSlide(image, alt, title, subtitle)).join("")}
+                </div>
+                <div class="hero-pagination" aria-label="Select featured slide">
+                    ${HERO_SLIDES.map((_, index) => `<button type="button" class="${index === 0 ? "is-active" : ""}" data-hero-indicator="${index}" aria-label="Show slide ${index + 1}" aria-current="${index === 0}"></button>`).join("")}
                 </div>
                 <button class="carousel-control carousel-control--previous" type="button" data-carousel-control="previous" aria-label="Show previous featured collection"><span aria-hidden="true">&#8592;</span></button>
                 <button class="carousel-control carousel-control--next" type="button" data-carousel-control="next" aria-label="Show next featured collection"><span aria-hidden="true">&#8594;</span></button>
@@ -55,6 +77,15 @@ export function HomePage() {
                         ${collectionCard("homePage/collections/collection1.png", "October Collection", "October")}
                         ${collectionCard("homePage/collections/collection2.png", "Autumn Collection", "Autumn")}
                         ${collectionCard("homePage/videos/Video.png", "Seasonal Collection", "Seasonal")}
+                        ${collectionCard("category/category_Grid_view_full/category1.png", "Neutral edit", "Neutral Edit")}
+                        ${collectionCard("category/category_Grid_view_full/category2.png", "Modern tailoring", "Modern Tailoring")}
+                        ${collectionCard("category/category_Grid_view_full/category3.png", "Soft layers", "Soft Layers")}
+                        ${collectionCard("category/category_Grid_view_full/category4.png", "After hours", "After Hours")}
+                        ${collectionCard("category/category_Grid_view_full/category5.png", "Weekend edit", "Weekend Edit")}
+                        ${collectionCard("productDetail/product1.png", "Essential pieces", "Essentials")}
+                        ${collectionCard("productDetail/product5.png", "New season", "New Season")}
+                        ${collectionCard("productDetail/product9.png", "Statement looks", "Statement Looks")}
+                        ${collectionCard("productDetail/product12.png", "The accessories edit", "Accessories")}
                     </div>
                     <button class="carousel-control carousel-control--next" type="button" data-carousel-control="next" aria-label="Show next collection"><span aria-hidden="true">&#8594;</span></button>
                 </div>
@@ -99,13 +130,12 @@ export function HomePage() {
 
 function heroBannerSlide(image, alt, title, subtitle) {
     return `
-        <article class="hero-feature-slide relative h-full overflow-hidden">
+        <article class="hero-feature-slide relative h-full overflow-hidden" style="--hero-image: url('./assets/images/${image}')">
             <img src="./assets/images/${image}" alt="${alt}" class="absolute inset-0 w-full h-full object-cover object-top">
             <div class="absolute inset-0 bg-black/10"></div>
-            <div class="relative z-10 flex h-full flex-col items-center justify-center px-4 pt-12">
+            <div class="hero-feature-slide__content relative z-10 flex h-full flex-col items-center justify-center px-4 pt-12">
                 <h1 class="text-[32px] leading-[40px] font-serif-title italic tracking-[2px] uppercase text-gray-800 font-normal">${title}<br><span class="not-italic tracking-[3px]">${subtitle}</span></h1>
-                <a href="./pages/collection/collection_detail/collection_detail.html" class="mt-28 bg-black/50 backdrop-blur-md text-white text-[11px] tracking-[2px] uppercase px-6 py-3 rounded-full hover:bg-black transition">EXPLORE COLLECTION</a>
-                <div class="flex space-x-1.5 mt-6 items-center" aria-hidden="true"><span class="w-1.5 h-1.5 bg-white rotate-45 transform"></span><span class="w-1.5 h-1.5 border border-white/70 rotate-45 transform"></span><span class="w-1.5 h-1.5 border border-white/70 rotate-45 transform"></span></div>
+                <a href="./pages/collection/collection_detail/collection_detail.html" class="mt-36 bg-black/50 backdrop-blur-md text-white text-[11px] tracking-[2px] uppercase px-6 py-3 rounded-full hover:bg-black transition">EXPLORE COLLECTION</a>
             </div>
         </article>
     `;
@@ -144,6 +174,13 @@ function recommendationCard(image, name) {
 let activeCarouselDrag = null;
 
 document.addEventListener("click", (event) => {
+    const indicator = event.target.closest("[data-hero-indicator]");
+    if (indicator) {
+        const carousel = document.querySelector(".hero-carousel");
+        carousel?.scrollTo({ left: Number(indicator.dataset.heroIndicator) * carousel.clientWidth, behavior: "smooth" });
+        return;
+    }
+
     const filter = event.target.closest("[data-new-arrival-filter]");
     if (filter) {
         const category = filter.dataset.newArrivalFilter;
@@ -195,3 +232,15 @@ function stopCarouselDrag(event) {
 
 document.addEventListener("pointerup", stopCarouselDrag);
 document.addEventListener("pointercancel", stopCarouselDrag);
+
+document.addEventListener("scroll", (event) => {
+    const carousel = event.target;
+    if (!carousel?.classList?.contains("hero-carousel") || !carousel.clientWidth) return;
+
+    const activeIndex = Math.round(carousel.scrollLeft / carousel.clientWidth);
+    document.querySelectorAll("[data-hero-indicator]").forEach((indicator, index) => {
+        const isActive = index === activeIndex;
+        indicator.classList.toggle("is-active", isActive);
+        indicator.setAttribute("aria-current", String(isActive));
+    });
+}, true);
