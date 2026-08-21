@@ -4,11 +4,9 @@ export function HomePage() {
             <!-- Hero Banner Section -->
             <section class="hero-carousel-wrap relative w-full aspect-[3/5] bg-gray-100 text-center overflow-hidden">
                 <div class="hero-carousel product-carousel flex w-full h-full overflow-x-auto no-scrollbar scroll-smooth" aria-label="Featured products">
-                    ${heroBannerSlide()}
-                    ${heroProductCard("homePage/newArrivals/new-arrival-1.png", "21WN reversible angora cardigan")}
-                    ${heroProductCard("homePage/newArrivals/new-arrival-2.png", "Cashmere blend jacket")}
-                    ${heroProductCard("homePage/newArrivals/new-arrival-3.png", "Soft knit cardigan")}
-                    ${heroProductCard("homePage/newArrivals/new-arrival-4.png", "Oblong bag")}
+                    ${heroBannerSlide("homePage/heros/hero-banner.png", "Luxury fashion collection", "LUXURY", "FASHION & ACCESSORIES")}
+                    ${heroBannerSlide("homePage/newArrivals/new-arrival-1.png", "New knitwear collection", "NEW", "KNITWEAR")}
+                    ${heroBannerSlide("homePage/newArrivals/new-arrival-4.png", "New bags collection", "SIGNATURE", "BAGS")}
                 </div>
                 <button class="carousel-control carousel-control--previous" type="button" data-carousel-control="previous" aria-label="Show previous featured collection"><span aria-hidden="true">&#8592;</span></button>
                 <button class="carousel-control carousel-control--next" type="button" data-carousel-control="next" aria-label="Show next featured collection"><span aria-hidden="true">&#8594;</span></button>
@@ -19,19 +17,25 @@ export function HomePage() {
                 <h2 class="text-base tracking-[4px] uppercase font-serif-title text-black">NEW ARRIVAL</h2>
                 <div class="divider-diamond"><span></span></div>
                 <!-- Category Filter Tabs -->
-                <div class="flex justify-center space-x-4 text-xs text-gray-400 mb-6"><div class="flex flex-col items-center"><span class="text-black font-medium cursor-pointer">All</span><span class="w-1 h-1 bg-amber-700 rotate-45 transform mt-1"></span></div><span>Apparel</span><span>Dress</span><span>Tshirt</span><span>Bag</span></div>
+                <div class="new-arrival-filters" role="tablist" aria-label="Filter new arrivals">
+                    <button type="button" class="is-active" data-new-arrival-filter="all" role="tab" aria-selected="true">All</button>
+                    <button type="button" data-new-arrival-filter="apparel" role="tab" aria-selected="false">Apparel</button>
+                    <button type="button" data-new-arrival-filter="dress" role="tab" aria-selected="false">Dress</button>
+                    <button type="button" data-new-arrival-filter="tshirt" role="tab" aria-selected="false">Tshirt</button>
+                    <button type="button" data-new-arrival-filter="bag" role="tab" aria-selected="false">Bag</button>
+                </div>
                 <!-- Product Grid -->
                 <div class="product-carousel-wrap">
                     <button class="carousel-control carousel-control--previous" type="button" data-carousel-control="previous" aria-label="Show previous new arrivals"><span aria-hidden="true">&#8592;</span></button>
                     <div class="new-arrival-carousel product-carousel flex overflow-x-auto space-x-3 px-4 pb-4 no-scrollbar scroll-smooth" aria-label="New arrival products">
-                        ${productCard("homePage/newArrivals/new-arrival-1.png", "21WN reversible angora cardigan")}
-                        ${productCard("homePage/newArrivals/new-arrival-2.png", "Cashmere blend jacket")}
-                        ${productCard("homePage/newArrivals/new-arrival-3.png", "Soft knit cardigan")}
-                        ${productCard("homePage/newArrivals/new-arrival-4.png", "Oblong bag")}
-                        ${productCard("productDetail/product1.png", "Classic cotton shirt")}
-                        ${productCard("productDetail/product2.png", "Relaxed tailored blazer")}
-                        ${productCard("productDetail/product3.png", "Pleated midi skirt")}
-                        ${productCard("productDetail/product4.png", "Leather mini bag")}
+                        ${productCard("homePage/newArrivals/new-arrival-1.png", "21WN reversible angora cardigan", "apparel")}
+                        ${productCard("homePage/newArrivals/new-arrival-2.png", "Cashmere blend jacket", "apparel")}
+                        ${productCard("homePage/newArrivals/new-arrival-3.png", "Soft knit cardigan", "tshirt")}
+                        ${productCard("homePage/newArrivals/new-arrival-4.png", "Oblong bag", "bag")}
+                        ${productCard("productDetail/product1.png", "Classic cotton shirt", "tshirt")}
+                        ${productCard("productDetail/product2.png", "Relaxed tailored blazer", "apparel")}
+                        ${productCard("productDetail/product3.png", "Pleated midi skirt", "dress")}
+                        ${productCard("productDetail/product4.png", "Leather mini bag", "bag")}
                     </div>
                     <button class="carousel-control carousel-control--next" type="button" data-carousel-control="next" aria-label="Show next new arrivals"><span aria-hidden="true">&#8594;</span></button>
                 </div>
@@ -45,12 +49,15 @@ export function HomePage() {
             <!-- Collections Section -->
             <section class="text-center py-4">
                 <h2 class="text-base tracking-[4px] uppercase font-serif-title text-black mb-6">COLLECTIONS</h2>
-                <!-- Collection Item 1 -->
-                <div class="relative w-full aspect-[16/9] bg-gray-200 overflow-hidden mb-6"><img src="./assets/images/homePage/collections/collection1.png" alt="October Collection" class="w-full h-full object-cover"><div class="absolute top-1/2 right-6 -translate-y-1/2 text-right"><span class="text-6xl font-serif-title italic opacity-30 text-gray-900 block leading-none">10</span><h3 class="text-lg font-serif-title uppercase tracking-wider text-black -mt-4">October</h3><p class="text-[10px] tracking-[3px] uppercase text-gray-600">COLLECTION</p></div></div>
-                <!-- Collection Item 2 -->
-                <div class="px-8 my-8"><div class="relative aspect-square bg-gray-100 overflow-hidden"><img src="./assets/images/homePage/collections/collection2.png" alt="Autumn Collection" class="w-full h-full object-cover"><div class="absolute top-6 left-1/2 -translate-x-1/2 text-center w-full"><h3 class="text-2xl font-serif-title italic text-gray-800">Autumn</h3><p class="text-[10px] tracking-[4px] uppercase text-gray-600">COLLECTION</p></div></div></div>
-                <!-- Video Banner -->
-                <div class="relative w-full aspect-[16/9] bg-gray-300 overflow-hidden flex items-center justify-center"><img src="./assets/images/homePage/videos/Video.png" alt="Collection video preview" class="w-full h-full object-cover"><button type="button" class="w-10 h-10 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center text-white absolute" aria-label="Play collection video"><svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></button></div>
+                <div class="collection-carousel-wrap">
+                    <button class="carousel-control carousel-control--previous" type="button" data-carousel-control="previous" aria-label="Show previous collection"><span aria-hidden="true">&#8592;</span></button>
+                    <div class="collection-carousel product-carousel" aria-label="Collections">
+                        ${collectionCard("homePage/collections/collection1.png", "October Collection", "October")}
+                        ${collectionCard("homePage/collections/collection2.png", "Autumn Collection", "Autumn")}
+                        ${collectionCard("homePage/videos/Video.png", "Seasonal Collection", "Seasonal")}
+                    </div>
+                    <button class="carousel-control carousel-control--next" type="button" data-carousel-control="next" aria-label="Show next collection"><span aria-hidden="true">&#8594;</span></button>
+                </div>
             </section>
 
             <!-- Just For You / Recommendations Section -->
@@ -90,36 +97,37 @@ export function HomePage() {
     `;
 }
 
-function heroProductCard(image, alt) {
-    return `
-        <article class="hero-product-card relative h-full overflow-hidden">
-            <img src="./assets/images/${image}" alt="${alt}" class="w-full h-full object-cover">
-            <div class="hero-product-card__label">${alt}</div>
-        </article>
-    `;
-}
-
-function heroBannerSlide() {
+function heroBannerSlide(image, alt, title, subtitle) {
     return `
         <article class="hero-feature-slide relative h-full overflow-hidden">
-            <img src="./assets/images/homePage/heros/hero-banner.png" alt="Luxury fashion collection" class="absolute inset-0 w-full h-full object-cover object-top">
+            <img src="./assets/images/${image}" alt="${alt}" class="absolute inset-0 w-full h-full object-cover object-top">
             <div class="absolute inset-0 bg-black/10"></div>
             <div class="relative z-10 flex h-full flex-col items-center justify-center px-4 pt-12">
-                <h1 class="text-[32px] leading-[40px] font-serif-title italic tracking-[2px] uppercase text-gray-800 font-normal">LUXURY<br><span class="not-italic tracking-[3px]">FASHION</span><br>&amp; ACCESSORIES</h1>
-                <a href="#/blog" class="mt-28 bg-black/50 backdrop-blur-md text-white text-[11px] tracking-[2px] uppercase px-6 py-3 rounded-full hover:bg-black transition">EXPLORE COLLECTION</a>
+                <h1 class="text-[32px] leading-[40px] font-serif-title italic tracking-[2px] uppercase text-gray-800 font-normal">${title}<br><span class="not-italic tracking-[3px]">${subtitle}</span></h1>
+                <a href="./pages/collection/collection_detail/collection_detail.html" class="mt-28 bg-black/50 backdrop-blur-md text-white text-[11px] tracking-[2px] uppercase px-6 py-3 rounded-full hover:bg-black transition">EXPLORE COLLECTION</a>
                 <div class="flex space-x-1.5 mt-6 items-center" aria-hidden="true"><span class="w-1.5 h-1.5 bg-white rotate-45 transform"></span><span class="w-1.5 h-1.5 border border-white/70 rotate-45 transform"></span><span class="w-1.5 h-1.5 border border-white/70 rotate-45 transform"></span></div>
             </div>
         </article>
     `;
 }
 
-function productCard(image, name) {
+function productCard(image, name, category) {
+    const productUrl = `./pages/product/product.html?product=${encodeURIComponent(name)}&image=${encodeURIComponent(`assets/images/${image}`)}`;
     return `
-        <div>
+        <a class="new-arrival-card" data-product-category="${category}" href="${productUrl}">
             <div class="aspect-[3/4] bg-gray-100 overflow-hidden mb-2"><img src="./assets/images/${image}" alt="${name}" class="w-full h-full object-cover"></div>
             <p class="text-[11px] text-gray-700 line-clamp-2 leading-tight">${name}</p>
             <p class="text-xs text-amber-700 mt-1 font-semibold">$120</p>
-        </div>
+        </a>
+    `;
+}
+
+function collectionCard(image, alt, title) {
+    return `
+        <a class="collection-card" href="./pages/collection/collection_detail/collection_detail.html">
+            <img src="./assets/images/${image}" alt="${alt}">
+            <span>${title}</span><small>COLLECTION</small>
+        </a>
     `;
 }
 
@@ -136,6 +144,23 @@ function recommendationCard(image, name) {
 let activeCarouselDrag = null;
 
 document.addEventListener("click", (event) => {
+    const filter = event.target.closest("[data-new-arrival-filter]");
+    if (filter) {
+        const category = filter.dataset.newArrivalFilter;
+        const carousel = document.querySelector(".new-arrival-carousel");
+
+        document.querySelectorAll("[data-new-arrival-filter]").forEach((tab) => {
+            const isActive = tab === filter;
+            tab.classList.toggle("is-active", isActive);
+            tab.setAttribute("aria-selected", String(isActive));
+        });
+        document.querySelectorAll(".new-arrival-card").forEach((card) => {
+            card.hidden = category !== "all" && card.dataset.productCategory !== category;
+        });
+        carousel?.scrollTo({ left: 0, behavior: "smooth" });
+        return;
+    }
+
     const control = event.target.closest("[data-carousel-control]");
     if (!control) return;
 
