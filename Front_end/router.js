@@ -10,6 +10,7 @@ import { handleCategoryRoute } from "./pages/categori/categori.router.js";
 import { handleProductRoute } from "./pages/product/product.router.js";
 import { handleCollectionRoute } from "./pages/collection/collection.router.js";
 import { handleCartRoute } from "./pages/cart/cart.router.js";
+import { handleSearchRoute } from "./pages/search/search.router.js";
 
 function getAppContainer() {
     return document.getElementById("app");
@@ -59,6 +60,9 @@ export function initRouter(){
                 break;
             case "cart":
                 handleCartRoute(childRoutes);
+                break;
+            case "search":
+                handleSearchRoute(childRoutes);
                 break;
             default:
                 console.warn("Route không tồn tại:", hash);
