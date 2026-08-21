@@ -554,3 +554,141 @@ body {
         width: 100%;
     }
 }
+
+/* Responsive Cart Payment: mobile, iPad and desktop. */
+@media (max-width: 767px) {
+    body {
+        justify-content: center;
+    }
+
+    .cart-container {
+        width: min(100%, 375px);
+        min-width: 0;
+        height: auto;
+        min-height: 640px;
+        overflow: visible;
+    }
+
+    .cart-items,
+    .cart-summary {
+        width: calc(100% - 32px);
+        margin-inline: auto;
+    }
+
+    .cart-item,
+    .divider,
+    .subtotal {
+        width: 100%;
+    }
+
+    .item-details {
+        width: calc(100% - 112px);
+    }
+
+    .buy-now-btn {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .cart-container {
+        width: min(92vw, 720px);
+        min-width: 0;
+        height: auto;
+        min-height: 720px;
+        overflow: visible;
+    }
+
+    .cart-title {
+        margin-top: 16px;
+    }
+
+    .cart-items,
+    .cart-summary {
+        width: calc(100% - 64px);
+        margin-inline: auto;
+    }
+
+    .cart-item {
+        width: 100%;
+        height: 186px;
+        gap: 20px;
+    }
+
+    .item-image {
+        width: 140px;
+        height: 186px;
+        min-width: 140px;
+        min-height: 186px;
+    }
+
+    .item-details {
+        width: auto;
+        height: auto;
+        flex: 1;
+    }
+
+    .divider,
+    .subtotal {
+        width: 100%;
+    }
+
+    .buy-now-btn {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cart-container {
+        width: min(90vw, 1120px);
+        min-width: 0;
+        height: auto;
+        min-height: 760px;
+        overflow: visible;
+    }
+
+    .cart-title {
+        margin: 16px 32px;
+    }
+
+    .cart-items {
+        width: calc(100% - 64px);
+        margin: 24px auto 32px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+    }
+
+    .cart-item {
+        width: 100%;
+        height: 186px;
+        gap: 20px;
+    }
+
+    .item-image {
+        width: 140px;
+        height: 186px;
+        min-width: 140px;
+        min-height: 186px;
+    }
+
+    .item-details {
+        width: auto;
+        height: auto;
+        flex: 1;
+    }
+
+    .cart-summary {
+        width: calc(100% - 64px);
+        margin: 0 auto 24px;
+    }
+
+    .divider,
+    .subtotal {
+        width: 100%;
+    }
+
+    .buy-now-btn {
+        width: 100%;
+    }
+}

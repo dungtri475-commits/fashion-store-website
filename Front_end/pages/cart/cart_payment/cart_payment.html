@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Fashion Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./cart_payment.css">
+</head>
+
+<body>
+    <main class="cart-container">
+        <button type="button" class="close-btn" aria-label="Close cart">
+            <img src="../../../assets/icons/Close.svg" alt="">
+        </button>
+
+        <h1 class="cart-title">CART</h1>
+
+        <!-- Products are rendered from open-fashion:cart by cart_payment.js. -->
+        <section class="cart-items" aria-live="polite"></section>
+
+        <section class="cart-summary">
+            <div class="divider"></div>
+
+            <div class="subtotal">
+                <span class="subtotal-text">SUB TOTAL</span>
+                <span class="subtotal-price">$0</span>
+            </div>
+
+            <p class="disclaimer">
+                *shipping charges, taxes and discount codes are calculated at the time of accounting.
+            </p>
+        </section>
+
+        <button type="button" class="buy-now-btn">
+            <img src="../../../assets/icons/shopping-bag.svg" alt="" class="buy-now-icon">
+            <span>BUY NOW</span>
+        </button>
+    </main>
+
+    <script type="module" src="./cart_payment.js"></script>
+</body>
+</html>
