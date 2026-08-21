@@ -7,10 +7,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./shipping_address.css">
+  <link rel="stylesheet" href="../checkout-responsive.css">
 </head>
-<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+<body class="checkout-page bg-gray-100 flex justify-center items-center min-h-screen">
 
-  <div class="w-full max-w-[375px] bg-white min-h-[812px] shadow-lg flex flex-col justify-between relative">
+  <div class="checkout-shell w-full max-w-[375px] bg-white min-h-[812px] shadow-lg flex flex-col justify-between relative">
     
     <div>
       <!-- 1. HEADER -->
@@ -31,7 +32,7 @@
         <h3 class="text-[11px] font-semibold tracking-widest text-gray-400 uppercase mb-3">SHIPPING ADRESS</h3>
         
         <!-- Address Card -->
-        <div class="flex items-center justify-between py-2">
+        <div id="shipping-address-display" class="flex items-center justify-between py-2">
           <div class="space-y-1">
             <h4 class="text-sm font-bold text-gray-800">Iris Watson</h4>
             <p class="text-xs text-gray-500 leading-relaxed">
@@ -74,8 +75,8 @@
       <div class="px-4 mb-6">
         <h3 class="text-[11px] font-semibold tracking-widest text-gray-400 uppercase mb-3">PAYMENT METHOD</h3>
         
-        <a href="../payment/payment_method.html" class="bg-gray-50 rounded-full py-3 px-5 flex items-center justify-between text-xs text-gray-400 hover:bg-gray-100 transition">
-          <span>select payment method</span>
+        <a href="../payment/payment_method.html" id="payment-method-link" class="bg-gray-50 rounded-full py-3 px-5 flex items-center justify-between text-xs text-gray-400 hover:bg-gray-100 transition">
+          <span id="payment-method-label">Select payment method</span>
           <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
           </svg>
@@ -87,19 +88,19 @@
     <div class="p-4 bg-white border-t border-gray-100">
       <div class="flex items-center justify-between mb-4">
         <span class="text-xs font-semibold tracking-widest uppercase text-gray-600">TOTAL</span>
-        <span class="text-sm font-semibold text-orange-400">$240</span>
+        <span id="shipping-total" class="text-sm font-semibold text-orange-400">$0</span>
       </div>
 
-      <a href="../review/checkout_review.html" class="w-full bg-black text-white py-3.5 flex items-center justify-center space-x-2 text-xs uppercase tracking-widest hover:bg-gray-800 transition">
+      <button type="button" id="btn-place-order" class="w-full bg-black text-white py-3.5 flex items-center justify-center space-x-2 text-xs uppercase tracking-widest hover:bg-gray-800 transition">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
         </svg>
         <span>PLACE ORDER</span>
-      </a>
+      </button>
     </div>
 
   </div>
 
-  <script src="./shipping_address.js"></script>
+  <script type="module" src="./shipping_address.js"></script>
 </body>
 </html>

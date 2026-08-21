@@ -6,14 +6,15 @@
   <title>Add Shipping Address - Open Fashion</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../checkout-responsive.css">
   <style>
     body { font-family: 'Tenor Sans', sans-serif; }
     ::-webkit-scrollbar { display: none; }
   </style>
 </head>
-<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+<body class="checkout-page bg-gray-100 flex justify-center items-center min-h-screen">
 
-  <div class="w-full max-w-[375px] bg-white min-h-[812px] shadow-lg flex flex-col justify-between relative">
+  <div class="checkout-shell w-full max-w-[375px] bg-white min-h-[812px] shadow-lg flex flex-col justify-between relative">
     
     <div>
       <!-- 1. HEADER -->
@@ -34,38 +35,38 @@
         <div class="flex space-x-4">
           <div class="w-1/2">
             <label class="block text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">First Name</label>
-            <input type="text" placeholder="Iris" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
+            <input name="firstName" type="text" autocomplete="given-name" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
           </div>
           <div class="w-1/2">
             <label class="block text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">Last Name</label>
-            <input type="text" placeholder="Watson" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
+            <input name="lastName" type="text" autocomplete="family-name" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
           </div>
         </div>
 
         <div>
           <label class="block text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">Address</label>
-          <input type="text" placeholder="2353/2C Tran Hung Dao Street" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
+          <input name="addressLine" type="text" autocomplete="street-address" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
         </div>
 
         <div>
           <label class="block text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">City</label>
-          <input type="text" placeholder="Ho Chi Minh City" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
+          <input name="city" type="text" autocomplete="address-level2" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
         </div>
 
         <div class="flex space-x-4">
           <div class="w-1/2">
             <label class="block text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">State</label>
-            <input type="text" placeholder="District 1" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
+            <input name="state" type="text" autocomplete="address-level1" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
           </div>
           <div class="w-1/2">
             <label class="block text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">Zip Code</label>
-            <input type="text" placeholder="700000" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
+            <input name="zipCode" type="text" autocomplete="postal-code" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
           </div>
         </div>
 
         <div>
           <label class="block text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">Phone Number</label>
-          <input type="tel" placeholder="+84 901 234 567" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
+          <input name="phone" type="tel" autocomplete="tel" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
         </div>
       </form>
     </div>
@@ -79,12 +80,6 @@
 
   </div>
 
-  <script>
-    document.getElementById('add-address-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Address added successfully!');
-      window.location.href = '../review/checkout_review.html';
-    });
-  </script>
+  <script type="module" src="./add_address.js"></script>
 </body>
 </html>

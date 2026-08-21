@@ -7,11 +7,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./checkout.css">
+  <link rel="stylesheet" href="../checkout-responsive.css">
 </head>
-<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+<body class="checkout-page bg-gray-100 flex justify-center items-center min-h-screen">
 
   <!-- Mobile Container Frame -->
-  <div class="w-full max-w-[375px] bg-white min-h-[812px] shadow-lg flex flex-col justify-between relative">
+  <div class="checkout-shell w-full max-w-[375px] bg-white min-h-[812px] shadow-lg flex flex-col justify-between relative">
     
     <div>
       <!-- 1. HEADER -->
@@ -29,27 +30,7 @@
       </div>
 
       <!-- 3. CART ITEM LIST -->
-      <div class="px-4 space-y-4" id="cart-items-container">
-        <!-- Item 1 -->
-        <div class="flex items-start space-x-3 cart-item" data-price="120">
-          <div class="w-24 h-32 bg-gray-100 flex-shrink-0">
-            <img src="../../../assets/images/category/category_Grid_view/category1.png" alt="Lamerei Cardigan" class="w-full h-full object-cover">
-          </div>
-          
-          <div class="flex-1 pt-1">
-            <h3 class="text-xs font-bold uppercase tracking-widest text-gray-800">LAMEREI</h3>
-            <p class="text-[11px] text-gray-500 mt-1">Recycle Boucle Knit Cardigan Pink</p>
-            
-            <div class="flex items-center space-x-3 mt-3">
-              <button class="btn-decrease w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center text-xs text-gray-600 hover:bg-gray-100">-</button>
-              <span class="item-quantity text-xs text-gray-800">1</span>
-              <button class="btn-increase w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center text-xs text-gray-600 hover:bg-gray-100">+</button>
-            </div>
-            
-            <p class="text-xs text-orange-400 font-medium mt-3">$<span class="item-price">120</span></p>
-          </div>
-        </div>
-      </div>
+      <div class="px-4 space-y-4" id="cart-items-container" aria-live="polite"></div>
 
       <!-- 4. PROMO CODE & DELIVERY OPTIONS -->
       <div class="px-4 mt-6 space-y-3">
@@ -79,19 +60,19 @@
     <div class="p-4 bg-white border-t border-gray-100">
       <div class="flex items-center justify-between mb-4">
         <span class="text-xs font-semibold tracking-widest uppercase text-gray-600">EST. TOTAL</span>
-        <span class="text-sm font-semibold text-orange-400">$<span id="total-price">120</span></span>
+        <span class="text-sm font-semibold text-orange-400" id="total-price">$0</span>
       </div>
 
-      <a href="../step2_address/shipping_address.html" id="btn-checkout" class="w-full bg-black text-white py-3.5 flex items-center justify-center space-x-2 text-xs uppercase tracking-widest hover:bg-gray-800 transition">
+      <button type="button" id="btn-checkout" class="w-full bg-black text-white py-3.5 flex items-center justify-center space-x-2 text-xs uppercase tracking-widest hover:bg-gray-800 transition">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
         </svg>
         <span>CHECKOUT</span>
-      </a>
+      </button>
     </div>
 
   </div>
 
-  <script src="./checkout.js"></script>
+  <script type="module" src="./checkout.js"></script>
 </body>
 </html>

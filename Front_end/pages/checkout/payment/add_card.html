@@ -6,14 +6,15 @@
   <title>Add Card - Open Fashion</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../checkout-responsive.css">
   <style>
     body { font-family: 'Tenor Sans', sans-serif; }
     ::-webkit-scrollbar { display: none; }
   </style>
 </head>
-<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+<body class="checkout-page bg-gray-100 flex justify-center items-center min-h-screen">
 
-  <div class="w-full max-w-[375px] bg-white min-h-[812px] shadow-lg flex flex-col justify-between relative">
+  <div class="checkout-shell w-full max-w-[375px] bg-white min-h-[812px] shadow-lg flex flex-col justify-between relative">
     
     <div>
       <!-- 1. HEADER  -->
@@ -33,28 +34,28 @@
       <form id="add-card-form" class="px-4 space-y-5">
         <div>
           <label class="block text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">Name On Card</label>
-          <input type="text" placeholder="Iris Watson" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
+          <input name="cardHolder" type="text" autocomplete="cc-name" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
         </div>
 
         <div>
           <label class="block text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">Card Number</label>
-          <input type="text" placeholder="4567 8901 2345 6789" maxlength="19" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
+          <input name="cardNumber" type="text" inputmode="numeric" autocomplete="cc-number" maxlength="19" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
         </div>
 
         <div class="flex space-x-4">
           <div class="w-1/2">
             <label class="block text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">Exp Month</label>
-            <input type="text" placeholder="05" maxlength="2" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
+            <input name="expMonth" type="text" inputmode="numeric" maxlength="2" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
           </div>
           <div class="w-1/2">
             <label class="block text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">Exp Year</label>
-            <input type="text" placeholder="2026" maxlength="4" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
+            <input name="expYear" type="text" inputmode="numeric" maxlength="4" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
           </div>
         </div>
 
         <div>
           <label class="block text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">CVV</label>
-          <input type="password" placeholder="•••" maxlength="4" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
+          <input name="cvv" type="password" inputmode="numeric" autocomplete="cc-csc" maxlength="4" class="w-full border-b border-gray-300 py-2 text-xs text-gray-800 focus:border-black outline-none transition" required>
         </div>
       </form>
     </div>
@@ -68,12 +69,6 @@
 
   </div>
 
-  <script>
-    document.getElementById('add-card-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Card added successfully!');
-      window.location.href = './payment_method.html';
-    });
-  </script>
+  <script type="module" src="./add_card.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 import { getCart, saveCart, updateCartItemQuantity } from "../../../services/cart.service.js";
 import { getProductById } from "../../../services/product.service.js";
+import { startCheckout } from "../../checkout/checkout-data.js";
 
 const EMPTY_CART_URL = new URL("../cart_empty/cart_empty.html", import.meta.url).href;
 const HOME_URL = new URL("../../../fashion_store.html", import.meta.url).href;
@@ -122,3 +123,14 @@ cartItemsElement.addEventListener("click", (event) => {
 });
 
 renderCart();
+
+document.querySelector(".buy-now-btn")?.addEventListener("click", () => {
+    const cart = getCart();
+    if (!cart.length) {
+        window.location.assign(EMPTY_CART_URL);
+        return;
+    }
+
+    startCheckout(cart);
+    window.location.assign(new URL("../../checkout/step1/checkout.html", import.meta.url).href);
+});
