@@ -14,8 +14,8 @@ export function Header() {
 
        <div class = "header_center">
          <h1 class = "header_logo">
-              Open Fashion
-         </a>
+           <a href="${homeUrl}" aria-label="Open Fashion home">Open Fashion</a>
+         </h1>
 
        </div>
        
