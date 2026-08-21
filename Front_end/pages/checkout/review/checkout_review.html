@@ -6,14 +6,15 @@
   <title>Checkout Review - Open Fashion</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../checkout-responsive.css">
   <style>
     body { font-family: 'Tenor Sans', sans-serif; }
     ::-webkit-scrollbar { display: none; }
   </style>
 </head>
-<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+<body class="checkout-page bg-gray-100 flex justify-center items-center min-h-screen">
 
-  <div class="w-full max-w-[375px] bg-white min-h-[812px] shadow-lg flex flex-col justify-between relative">
+  <div class="checkout-shell w-full max-w-[375px] bg-white min-h-[812px] shadow-lg flex flex-col justify-between relative">
     
     <div>
       <!-- 1. HEADER  -->
@@ -30,7 +31,7 @@
       </div>
 
       <!-- 3. SHIPPING ADDRESS SUMMARY -->
-      <div class="px-4 mb-4">
+      <div class="px-4 mb-4" id="review-address">
         <div class="flex items-center justify-between border-b border-gray-200 pb-3">
           <div>
             <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-widest">Shipping Address</p>
@@ -47,7 +48,7 @@
       </div>
 
       <!-- 4. PAYMENT METHOD SUMMARY -->
-      <div class="px-4 mb-4">
+      <div class="px-4 mb-4" id="review-payment">
         <div class="flex items-center justify-between border-b border-gray-200 pb-3">
           <div class="flex items-center space-x-3">
             <div class="w-9 h-6 flex items-center justify-center bg-gray-50 rounded border border-gray-200">
@@ -71,7 +72,7 @@
       </div>
 
       <!-- 5. CART ITEMS REVIEW -->
-      <div class="px-4 space-y-3">
+      <div class="px-4 space-y-3" id="review-items">
         <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-widest">Items</p>
         
         <div class="flex items-center space-x-3">
@@ -108,6 +109,6 @@
 
   </div>
 
-  <script src="./checkout_review.js"></script>
+  <script type="module" src="./checkout_review.js"></script>
 </body>
 </html>

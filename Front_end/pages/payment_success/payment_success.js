@@ -7,6 +7,8 @@ const ratingButtons = document.querySelectorAll(".rating-button");
 
 let selectedRating = null;
 
+document.getElementById("payment-id").textContent = localStorage.getItem("open-fashion:last-order-id") || "—";
+
 /* RATING */
 ratingButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -39,5 +41,5 @@ closeButton.addEventListener("click", () => {
 
 /* BACK TO HOME */
 backHomeButton.addEventListener("click", () => {
-    window.location.href = "../../index.html";
+    window.location.href = "../../fashion_store.html#/home";
 });
