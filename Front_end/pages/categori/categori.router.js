@@ -115,6 +115,7 @@ function openFullScreenImage(source, alt) {
 }
 
 function openProductDetail(card) {
+    sessionStorage.setItem("open-fashion:category-return-url", window.location.href);
     const url = new URL(PRODUCT_DETAIL_URL);
     url.searchParams.set("product", card.dataset.productName);
     url.searchParams.set("image", card.dataset.productImage);
